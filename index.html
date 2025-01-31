@@ -1,46 +1,107 @@
-/* Ürün kartları */
-.urun {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
-    margin: 20px;
-    padding: 20px;
-    width: 280px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyzPlastik Ürün Kataloğu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="ayzlogo.jpeg" alt="AyzPlastik Logo" id="logo">
+        </div>
+        <h1>AyzPlastik Ürün Kataloğu</h1>
+    </header>
 
-/* Drop-down menü stil */
-select#option-select {
-    padding: 8px;
-    margin-top: 10px;
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
+    <!-- İletişim Bilgileri -->
+    <div class="contact-info">
+        <p><strong>İletişim Bilgileri:</strong></p>
+        <div class="contact-details">
+            <!-- Instagram Logo -->
+            <img src="inslogo.png" alt="Instagram Logo" id="instagram-logo">
+            <a href="https://www.instagram.com/ayzplastik" class="instagram-link">
+                <span class="instagram-text">AYZPLASTIK</span>
+            </a>
+        </div>
+        <!-- WhatsApp Logo -->
+        <img src="wplogo.png" alt="WhatsApp Logo" id="whatsapp-logo">
+        <a href="https://wa.me/05542345454" class="whatsapp-link">05542345454</a>
+    </div>
 
-/* Fiyat etiketi */
-#price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 15px;
-}
+    <!-- Ürün Listesi -->
+    <main>
+        <section id="urunler">
+            <!-- Ürünler burada JavaScript ile yüklenecek -->
+            <div class="urun">
+                <img src="plastiksaksi.jpg" alt="Plastik Saksı">
+                <h2>Plastik Saksı</h2>
+                
+                <!-- Fiyat etiketi -->
+                <p id="price">3500 TL</p>
+                
+                <!-- Seçenekler dropdown menüsü -->
+                <select id="option-select" onchange="updatePrice()">
+                    <option value="3500">Standart - 3500 TL</option>
+                    <option value="4000">Büyük - 4000 TL</option>
+                    <option value="4500">Özel Tasarım - 4500 TL</option>
+                </select>
+                
+                <!-- Satın al butonu -->
+                <a href="https://wa.me/05357284455" class="satin-al">Satın Al</a>
+            </div>
+        </section>
+    </main>
 
-/* Satın al butonu */
-.satin-al {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 20px;
-    background-color: #ff6347; 
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
+    <!-- Modal Özellikler -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Ürün Özellikleri</h2>
+            <ul id="product-features">
+                <!-- Özellikler buraya ekleniyor -->
+            </ul>
+        </div>
+    </div>
 
-.satin-al:hover {
-    background-color: #d75a93; 
-}
+    <script src="app.js"></script>
+
+    <script>
+        // Fiyatı güncelleme fonksiyonu
+        function updatePrice() {
+            var selectedOption = document.getElementById('option-select').value;
+            document.getElementById('price').textContent = selectedOption + ' TL';
+        }
+
+        // Modal açma fonksiyonu
+        window.openModal = function(productName) {
+            document.getElementById('myModal').style.display = "flex";
+            
+            // Ürün Özellikleri
+            const featuresList = document.getElementById('product-features');
+            featuresList.innerHTML = ""; // Listeyi temizle
+
+            // Ürün özelliklerini ekle
+            const urun = urunler.find(item => item.isim === productName);
+            urun.ozellikler.forEach(feature => {
+                const li = document.createElement("li");
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        };
+
+        // Modal kapama fonksiyonu
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Modal dışında bir yere tıklanırsa da kapanmasını sağla
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal') || event.target == document.querySelector('.close')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

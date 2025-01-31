@@ -74,8 +74,9 @@ header h1:hover {
 /* İletişim detayları için stil */
 .contact-details {
     display: flex;
-    flex-direction: column; /* Dikey hizalama */
-    align-items: center; /* Ortalamak için */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Logoları dikey sıralar */
 }
 
 /* Instagram logo ve metni için düzenleme */
@@ -83,7 +84,6 @@ header h1:hover {
     width: 30px; /* Instagram logosu eski boyut */
     height: auto; /* Yükseklik oranını koruyacak şekilde */
     margin-right: 10px; /* Logo ile metin arasındaki mesafe */
-    vertical-align: middle; /* Logo ve metni hizalamak için */
 }
 
 /* Instagram linki stilini güncelleme */
@@ -95,7 +95,7 @@ header h1:hover {
     font-weight: 600; /* Metin ağırlığı */
     display: flex;
     align-items: center; /* Logo ve metni hizalamak için */
-    margin-left: 10px; /* Logo ile metin arasında biraz boşluk bırakmak için */
+    margin-bottom: 10px; /* Instagram ile WhatsApp arasında boşluk */
 }
 
 /* Instagram metninin stilini ayarlama */
@@ -116,19 +116,22 @@ header h1:hover {
     width: 30px; /* WhatsApp logosu eski boyut */
     height: auto; /* Yükseklik oranını koruyacak şekilde */
     margin-right: 10px; /* Logo ile metin arasındaki mesafe */
-    vertical-align: middle; /* Logo ve metni hizalamak için */
+    margin-left: 10px; /* WhatsApp logosu ile metin arasındaki mesafe */
 }
 
 .whatsapp-link {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 24px; /* Numara fontunu büyütüyoruz */
     color: #25D366; /* WhatsApp yeşil rengi */
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600; /* Font ağırlığı */
+    display: flex;
+    align-items: center; /* Logo ve metni hizalamak için */
+    justify-content: center; /* Ortalamak için */
 }
 
 .whatsapp-link:hover {
-    text-decoration: underline;
+    text-decoration: underline; 
 }
 
 /* Ürün listesi */
@@ -257,20 +260,51 @@ header h1:hover {
 
 .contact-details {
     display: flex;
-    flex-direction: column; /* Dikey hizalama */
-    align-items: center; /* Ortalamak için */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Logoları dikey sıralar */
 }
 
+/* Instagram ve WhatsApp logoları */
+#instagram-logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#whatsapp-logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px; /* WhatsApp logosu ile metin arasındaki mesafe */
+}
+
+/* Instagram linki */
+.instagram-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Instagram ile WhatsApp arasında boşluk */
+}
+
+/* WhatsApp linki */
 .whatsapp-link {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 24px;
     color: #25D366;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ortalamak için */
 }
 
 .whatsapp-link:hover {
-    text-decoration: underline;
+    text-decoration: underline; 
 }
 
 /* Ok butonlarının temel stili */
@@ -280,34 +314,12 @@ button.prev, button.next {
     border: 2px solid #fff; /* Beyaz sınır */
     font-size: 30px; /* Buton boyutu */
     padding: 12px;
-    border-radius: 50%; /* Yuvarlak buton */
+    border-radius: 50%;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    transition: background-color 0.3s ease;
 }
 
-/* Sağ ok butonu */
-button.next {
-    right: 20px; /* Sağ tarafa yerleştir */
+button.prev:hover, button.next:hover {
+    background-color: #ff6347; /* Hover durumunda kırmızımsı renk */
+    color: white; /* Yazı rengi beyaz olur */
 }
 
-/* Sol ok butonu */
-button.prev {
-    left: 20px; /* Sol tarafa yerleştir */
-}
-
-/* Hover efekti */
-button:hover {
-    background-color: #ff6347; /* Pembe renge dönüş */
-    border-color: #d75a93;
-}
-
-/* Mobil uyumlu */
-@media (max-width: 768px) {
-    #instagram-logo, #whatsapp-logo {
-        width: 24px; /* Boyut küçültme */
-    }
-}

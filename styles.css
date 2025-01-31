@@ -74,8 +74,8 @@ header h1:hover {
 /* İletişim detayları için stil */
 .contact-details {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Dikey hizalama */
+    align-items: center; /* Ortalamak için */
 }
 
 /* Instagram logo ve metni için düzenleme */
@@ -83,6 +83,7 @@ header h1:hover {
     width: 30px; /* Instagram logosu eski boyut */
     height: auto; /* Yükseklik oranını koruyacak şekilde */
     margin-right: 10px; /* Logo ile metin arasındaki mesafe */
+    vertical-align: middle; /* Logo ve metni hizalamak için */
 }
 
 /* Instagram linki stilini güncelleme */
@@ -115,22 +116,19 @@ header h1:hover {
     width: 30px; /* WhatsApp logosu eski boyut */
     height: auto; /* Yükseklik oranını koruyacak şekilde */
     margin-right: 10px; /* Logo ile metin arasındaki mesafe */
-    vertical-align: left; /* Logo ve metni hizalamak için */
+    vertical-align: middle; /* Logo ve metni hizalamak için */
 }
 
 .whatsapp-link {
     font-family: 'Roboto', sans-serif;
-    font-size: 24px; /* Numara fontunu büyütüyoruz */
+    font-size: 16px;
     color: #25D366; /* WhatsApp yeşil rengi */
     text-decoration: none;
-    font-weight: 600; /* Font ağırlığı */
-    display: flex;
-    align-items: center; /* Logo ve metni hizalamak için */
-    justify-content: center; /* Ortalamak için */
+    font-weight: 500;
 }
 
 .whatsapp-link:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 /* Ürün listesi */
@@ -259,8 +257,8 @@ header h1:hover {
 
 .contact-details {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Dikey hizalama */
+    align-items: center; /* Ortalamak için */
 }
 
 .whatsapp-link {
@@ -304,35 +302,12 @@ button.prev {
 /* Hover efekti */
 button:hover {
     background-color: #ff6347; /* Pembe renge dönüş */
-    color: white;
-    border-color: #ff6347;
+    border-color: #d75a93;
 }
 
-/* Ürünlerin altındaki ok butonları */
-#urunler .urun {
-    position: relative;
-}
-
-/* Sağ ve sol ok butonları ürünlerin alt kısmında olacak şekilde */
-#urunler .urun::after {
-    content: "→"; /* Ok işareti */
-    font-size: 30px;
-    color: #ff6347;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-#urunler .urun::after:hover {
-    transform: translateX(-50%) scale(1.2); /* Hover efektinde büyütme */
-}
-
-/* Mobil uyumlu ok butonu */
+/* Mobil uyumlu */
 @media (max-width: 768px) {
-    #urunler .urun::after {
-        font-size: 24px;
+    #instagram-logo, #whatsapp-logo {
+        width: 24px; /* Boyut küçültme */
     }
 }

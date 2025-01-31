@@ -59,25 +59,19 @@ document.addEventListener("DOMContentLoaded", function () {
         let imagesHTML = '';
         if (Array.isArray(urun.resim)) {
             urun.resim.forEach((image, index) => {
-                imagesHTML += `
+                imagesHTML += ` 
                     <div class="urun-gorsel-container" style="display: ${index === 0 ? 'block' : 'none'};">
                         <img src="${image}" alt="${urun.isim}" class="urun-gorsel" data-index="${index}">
                     </div>
                 `;
             });
         } else {
-            imagesHTML = `
+            imagesHTML = ` 
                 <div class="urun-gorsel-container" style="display: block;">
                     <img src="${urun.resim}" alt="${urun.isim}" class="urun-gorsel">
                 </div>
             `;
         }
-
-        let ozelliklerHTML = '<div class="dropdown"><button class="dropbtn">Özellikler</button><div class="dropdown-content">';
-        urun.ozellikler.forEach(ozellik => {
-            ozelliklerHTML += `<p>${ozellik}</p>`;
-        });
-        ozelliklerHTML += '</div></div>';
 
         urunDiv.innerHTML = `
             <div class="urun-gorseller">
@@ -88,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <h2>${urun.isim}</h2>
             <p>Fiyat: ${urun.fiyat}</p>
             <a href="https://wa.me/905542345454?text=${encodeURIComponent(urun.isim + ' satın almak istiyorum.')}" class="satin-al">Satın Al</a>
-            ${ozelliklerHTML}
         `;
 
         urunlerContainer.appendChild(urunDiv);

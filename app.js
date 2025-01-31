@@ -95,23 +95,4 @@ document.addEventListener("DOMContentLoaded", function () {
         images[currentIndex].style.display = 'none';
         images[nextIndex].style.display = 'block';
     };
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            let dropdowns = document.getElementsByClassName("dropdown-content");
-            for (let i = 0; i < dropdowns.length; i++) {
-                let openDropdown = dropdowns[i];
-                if (openDropdown.style.display === "block") {
-                    openDropdown.style.display = "none";
-                }
-            }
-        }
-    };
-
-    document.addEventListener("click", function(event) {
-        if (event.target.classList.contains("dropbtn")) {
-            let dropdownContent = event.target.nextElementSibling;
-            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-        }
-    });
 });

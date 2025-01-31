@@ -76,7 +76,6 @@ header h1:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Logoları dikey sıralar */
 }
 
 /* Instagram logo ve metni için düzenleme */
@@ -95,7 +94,7 @@ header h1:hover {
     font-weight: 600; /* Metin ağırlığı */
     display: flex;
     align-items: center; /* Logo ve metni hizalamak için */
-    margin-bottom: 10px; /* Instagram ile WhatsApp arasında boşluk */
+    margin-left: 10px; /* Logo ile metin arasında biraz boşluk bırakmak için */
 }
 
 /* Instagram metninin stilini ayarlama */
@@ -116,9 +115,10 @@ header h1:hover {
     width: 30px; /* WhatsApp logosu eski boyut */
     height: auto; /* Yükseklik oranını koruyacak şekilde */
     margin-right: 10px; /* Logo ile metin arasındaki mesafe */
-    margin-left: 10px; /* WhatsApp logosu ile metin arasındaki mesafe */
+    vertical-align: left; /* Logo ve metni hizalamak için */
 }
 
+/* WhatsApp linki stilini güncelleme */
 .whatsapp-link {
     font-family: 'Roboto', sans-serif;
     font-size: 24px; /* Numara fontunu büyütüyoruz */
@@ -262,49 +262,18 @@ header h1:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Logoları dikey sıralar */
 }
 
-/* Instagram ve WhatsApp logoları */
-#instagram-logo {
-    width: 30px;
-    height: auto;
-    margin-right: 10px;
-}
-
-#whatsapp-logo {
-    width: 30px;
-    height: auto;
-    margin-right: 10px;
-    margin-left: 10px; /* WhatsApp logosu ile metin arasındaki mesafe */
-}
-
-/* Instagram linki */
-.instagram-link {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    color: #000;
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px; /* Instagram ile WhatsApp arasında boşluk */
-}
-
-/* WhatsApp linki */
 .whatsapp-link {
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     color: #25D366;
     text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Ortalamak için */
+    font-weight: 500;
 }
 
 .whatsapp-link:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 /* Ok butonlarının temel stili */
@@ -314,12 +283,57 @@ button.prev, button.next {
     border: 2px solid #fff; /* Beyaz sınır */
     font-size: 30px; /* Buton boyutu */
     padding: 12px;
-    border-radius: 50%;
+    border-radius: 50%; /* Yuvarlak buton */
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background-color 0.3s ease;
 }
 
-button.prev:hover, button.next:hover {
-    background-color: #ff6347; /* Hover durumunda kırmızımsı renk */
-    color: white; /* Yazı rengi beyaz olur */
+/* Sağ ok butonu */
+button.next {
+    right: 20px; /* Sağ tarafa yerleştir */
 }
 
+/* Sol ok butonu */
+button.prev {
+    left: 20px; /* Sol tarafa yerleştir */
+}
+
+/* Hover efekti */
+button:hover {
+    background-color: #ff6347; /* Pembe renge dönüş */
+    color: white;
+    border-color: #ff6347;
+}
+
+/* Ürünlerin altındaki ok butonları */
+#urunler .urun {
+    position: relative;
+}
+
+/* Sağ ve sol ok butonları ürünlerin alt kısmında olacak şekilde */
+#urunler .urun::after {
+    content: "→"; /* Ok işareti */
+    font-size: 30px;
+    color: #ff6347;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#urunler .urun::after:hover {
+    transform: translateX(-50%) scale(1.2); /* Hover efektinde büyütme */
+}
+
+/* Mobil uyumlu ok butonu */
+@media (max-width: 768px) {
+    #urunler .urun::after {
+        font-size: 24px;
+    }
+}

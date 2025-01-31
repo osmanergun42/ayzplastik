@@ -112,7 +112,7 @@ header h1:hover {
 
 /* WhatsApp logosunun boyutlandırılması */
 #whatsapp-logo {
-    width: 60px; /* WhatsApp logosu eski boyut */
+    width: 100px; /* WhatsApp logosu eski boyut */
     height: auto; /* Yükseklik oranını koruyacak şekilde */
     margin-right: 10px; /* Logo ile metin arasındaki mesafe */
     margin-left: 10px; /* WhatsApp logosu ile metin arasındaki mesafe */

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const urunler = [
         {
             isim: "FİŞLİ IŞIKLI TOP",
-            fiyat: "2500 TL",
+            fiyat: 2500,
             resim: [
                 "isikli_top1.jpeg", 
                 "isiklitop2.jpeg", 
@@ -14,11 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Renk değiştirebilen LED ışıklar",
                 "Uzun ömürlü batarya",
                 "Kolay taşınabilir tasarım"
-            ]
+            ],
+            boyutlar: {
+                "10x10 cm": 0,
+                "20x20 cm": 500,
+                "30x30 cm": 1000
+            }
         },
         {
             isim: "FİŞLİ BİSTRO MASA",
-            fiyat: "6500 TL",
+            fiyat: 6500,
             resim: [
                 "bistro_masa1.jpeg", 
                 "bistromasa2.jpeg", 
@@ -30,11 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Tek şarjla 40 saat rakipsiz",
                 "4 ana 12 ara renk kumandalı kontrol",
                 "Klasik bistro masasının boyutu: 60 cm x 60 cm"
-            ]
+            ],
+            boyutlar: {
+                "60x60 cm": 0,
+                "70x70 cm": 700,
+                "80x80 cm": 1400
+            }
         },
         {
             isim: "FİŞLİ PLASTİK SAKSI",
-            fiyat: "3500 TL",
+            fiyat: 3500,
             resim: [
                 "saksi1.jpeg", 
                 "saksi2.jpeg", 
@@ -46,14 +56,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Farklı renk seçenekleri",
                 "Iç mekan ve dış mekan kullanımına uygun",
                 "Kolay taşınabilir"
-            ]
+            ],
+            boyutlar: {
+                "10x10 cm": 0,
+                "20x20 cm": 300,
+                "30x30 cm": 600
+            }
         }
     ];
 
-    // Ürünlerin kopyalarını oluştur ve isimlerini "ŞARJLI" olarak değiştir
+    // Ürünlerin kopyalarını oluştur ve isimlerini "ŞARJLI" olarak değiştir, fiyatlarına 1000 TL ekle
     const sarjliUrunler = urunler.map(urun => ({
         ...urun,
-        isim: urun.isim.replace("FİŞLİ", "ŞARJLI")
+        isim: urun.isim.replace("FİŞLİ", "ŞARJLI"),
+        fiyat: urun.fiyat + 1000
     }));
 
     // Orijinal ürünleri ve şarjlı ürünleri birleştir
@@ -64,6 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
     tumUrunler.forEach(urun => {
         const urunDiv = document.createElement("div");
         urunDiv.classList.add("urun");
+
+        // Dropdown menü oluştur
+        let dropdownHTML = '<select class="urun-boyut-secimi">';
+        for (const boyut in urun.boyutlar) {
+            dropdownHTML += `<option value="${boyut}">${boyut}</option>`;
+        }
+        dropdownHTML += '</select>';
 
         let imagesHTML = '';
         if (Array.isArray(urun.resim)) {
@@ -89,11 +112,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 <button class="next" onclick="changeImage(event, 1)">→</button>
             </div>
             <h2>${urun.isim}</h2>
-            <p>Fiyat: ${urun.fiyat}</p>
+            <p class="urun-fiyat">Fiyat: ${urun.fiyat} TL</p>
+            ${dropdownHTML}
             <a href="https://wa.me/905542345454?text=${encodeURIComponent(urun.isim + ' satın almak istiyorum.')}" class="satin-al">Satın Al</a>
         `;
 
         urunlerContainer.appendChild(urunDiv);
+
+        // Fiyatı güncelleme işlevi
+        urunDiv.querySelector('.urun-boyut-secimi').addEventListener('change', function (event) {
+            const secilenBoyut = event.target.value;
+            const yeniFiyat = urun.fiyat + urun.boyutlar[secilenBoyut];
+            urunDiv.querySelector('.urun-fiyat').textContent = `Fiyat: ${yeniFiyat} TL`;
+        });
     });
 
     window.changeImage = function (event, direction) {

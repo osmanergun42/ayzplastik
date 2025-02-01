@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <button class="prev" onclick="changeImage(event, -1)">←</button>
                 <button class="next" onclick="changeImage(event, 1)">→</button>
             </div>
-            <h2>${urun.isim}</h2>
+            <h2 id="${urun.isim.toLowerCase().replace(/\s+/g, '_')}">${urun.isim}</h2>
             <p class="urun-fiyat">Fiyat: ${urun.fiyat} TL</p>
             ${dropdownHTML}
             <button class="ozellikler" data-ozellikler='${JSON.stringify(urun.ozellikler)}'>Özellikler</button>
@@ -166,4 +166,16 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
+
+    // Dropdown menüden ürün seçildiğinde yönlendirme işlevi
+    window.navigateToProduct = function () {
+        const productMenu = document.getElementById('productMenu');
+        const selectedProduct = productMenu.value;
+        if (selectedProduct) {
+            const productElement = document.getElementById(selectedProduct);
+            if (productElement) {
+                productElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
 });

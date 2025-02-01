@@ -25,7 +25,7 @@ header {
 /* Drop-down menü stili */
 .dropdown, .sarjli-fisli-dropdown {
     display: inline-block;
-    margin-left: 20px; /* Sol tarafa hizalar */
+    margin-left: 50px; /* Sol tarafa hizalar */
     margin-top: 10px; /* İletişim bilgileri ile hizalar */
 }
 

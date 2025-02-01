@@ -181,6 +181,7 @@ header h1:hover {
     align-items: center; /* Telefon numarasını yatayda hizalar */
     margin-top: 10px; /* Instagram logosu ile WhatsApp logosu arasına boşluk ekler */
 }
+
 /* Ürün listesi */
 #urunler {
     display: flex;

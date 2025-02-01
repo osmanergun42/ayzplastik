@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tumUrunler.forEach(urun => {
         const urunDiv = document.createElement("div");
         urunDiv.classList.add("urun");
+        urunDiv.id = urun.isim.toLowerCase().replace(/\s+/g, '_');
 
         // Dropdown menü oluştur
         let dropdownHTML = '<select class="urun-boyut-secimi">';
@@ -172,9 +173,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const productMenu = document.getElementById('productMenu');
         const selectedProduct = productMenu.value;
         if (selectedProduct) {
-            const productElement = document.getElementById(selectedProduct);
-            if (productElement) {
-                productElement.scrollIntoView({ behavior: 'smooth' });
+            // Önce tüm ürünleri gizle
+            document.querySelectorAll('.urun').forEach(urun => {
+                urun.style.display = 'none';
+            });
+
+            // Seçilen ürünü göster
+            const selectedProductElement = document.getElementById(selectedProduct);
+            if (selectedProductElement) {
+                selectedProductElement.style.display = 'block';
+                selectedProductElement.scrollIntoView({ behavior: 'smooth' });
             }
         }
     };

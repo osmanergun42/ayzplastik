@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urunler = [
         {
-            isim: "FİŞLİ IŞIKLI KÜRE",
+            isim: "FİŞLİ IŞIKLI TOP",
             fiyat: "2500 TL",
             resim: [
                 "isikli_top1.jpeg", 
@@ -50,9 +50,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
+    // Ürünlerin kopyalarını oluştur ve isimlerini "ŞARJLI" olarak değiştir
+    const sarjliUrunler = urunler.map(urun => ({
+        ...urun,
+        isim: urun.isim.replace("FİŞLİ", "ŞARJLI")
+    }));
+
+    // Orijinal ürünleri ve şarjlı ürünleri birleştir
+    const tumUrunler = [...urunler, ...sarjliUrunler];
+
     const urunlerContainer = document.getElementById("urunler");
 
-    urunler.forEach(urun => {
+    tumUrunler.forEach(urun => {
         const urunDiv = document.createElement("div");
         urunDiv.classList.add("urun");
 

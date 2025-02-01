@@ -168,22 +168,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Dropdown menüden ürün seçildiğinde yönlendirme işlevi
-    window.navigateToProduct = function () {
-        const productMenu = document.getElementById('productMenu');
-        const selectedProduct = productMenu.value;
-        if (selectedProduct) {
-            // Önce tüm ürünleri gizle
-            document.querySelectorAll('.urun').forEach(urun => {
+    // Filtreleme sistemi
+    document.getElementById('filter-input').addEventListener('input', function(event) {
+        const filterText = event.target.value.toLowerCase();
+        const urunler = document.querySelectorAll('.urun');
+        urunler.forEach(urun => {
+            const urunIsim = urun.querySelector('h2').textContent.toLowerCase();
+            if (urunIsim.includes(filterText)) {
+                urun.style.display = 'block';
+            } else {
                 urun.style.display = 'none';
-            });
-
-            // Seçilen ürünü göster
-            const selectedProductElement = document.getElementById(selectedProduct);
-            if (selectedProductElement) {
-                selectedProductElement.style.display = 'block';
-                selectedProductElement.scrollIntoView({ behavior: 'smooth' });
             }
-        }
-    };
+        });
+    });
 });

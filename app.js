@@ -132,9 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Özellikler butonu tıklama işlevi
         urunDiv.querySelector('.ozellikler').addEventListener('click', function (event) {
             const ozellikler = JSON.parse(event.target.getAttribute('data-ozellikler'));
-            const modal = document.getElementById("ozelliklerModal");
+            const modal = document.getElementById("myModal");
             const modalContent = modal.querySelector(".modal-content");
-            const ozelliklerList = modalContent.querySelector("ul");
+            const ozelliklerList = modalContent.querySelector("ul#product-features");
             ozelliklerList.innerHTML = "";
             ozellikler.forEach(ozellik => {
                 const li = document.createElement("li");
@@ -156,12 +156,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Modal kapatma işlevi
     document.querySelector(".modal .close").addEventListener('click', function () {
-        document.getElementById("ozelliklerModal").style.display = "none";
+        document.getElementById("myModal").style.display = "none";
     });
 
     // Modal dışına tıklama işlevi
     window.addEventListener('click', function (event) {
-        const modal = document.getElementById("ozelliklerModal");
+        const modal = document.getElementById("myModal");
         if (event.target === modal) {
             modal.style.display = "none";
         }

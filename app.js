@@ -32,9 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "bistromasa5.jpeg"  
             ],
             ozellikler: [
-                "Tek şarjla 40 saat rakipsiz",
-                "4 ana 12 ara renk kumandalı kontrol",
-                "Klasik bistro masasının boyutu: 60 cm x 60 cm"
+                "Polietilen malzemeden imal edilmektedir.",
+                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
+                "65*45*105H cm ölçülerindedir",
+                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
+                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
             boyutlar: {
                 "60x60 cm": 0,

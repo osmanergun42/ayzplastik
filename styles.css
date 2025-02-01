@@ -343,7 +343,7 @@ select.urun-boyut-secimi {
     -webkit-appearance: none; /* Tarayıcı stilini kaldır */
     -moz-appearance: none; /* Tarayıcı stilini kaldır */
     appearance: none; /* Tarayıcı stilini kaldır */
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzMzMyIgZD0iTTEuMSA0LjhsNy45IDcuOSA3LjktNy45Yy4zLS4zLjctLjQuOS0uNC4yIDAgLjYuMS45LjRsMy41IDMuNXYuNS0uNWwtMy41LTMuNWMtLjQtLjQtLjktLjQtMS4yIDBMMTggMi41bC03LjkgNy45TDQuNCAyLjVjLS40LS40LS45LS40LTEuMiAwbC03LjkgNy45djUtLjVMMCA4LjFjLjMtLjMuNy0uNC45LS40LjIgMCAuNi4xLjkuNEw4LjEgMTBsNy45LTcuOUwxNC4yIDVsLjUgLjUtLjUtLjVjLS4zLS4zLS43LS40LS45LS40LS4yIDAtLjYuMS0uOS40eiIvPgo8L3N2Zz4K'); /* Özel ok simgesi */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzMzMyIgZD0iTTEuMSA0LjhsNy45IDcuOSA3LjktNy45Yy4zLS4zLjctLjQuOS0uNC4yIDAgLjYuMS45LjRsMy41IDMuNXYuNS0uNWwtMy41LTMuNWMtLjQtLjQtLjktLjQtMS4yIDBMMTggMi41bC03LjkgNy45TDQuNCAyLjVjLS40LS40LS45LS40LTEuMiAwbC07LjkgNy45djUtLjVMMCA4LjFjLjMtLjMuNy0uNC45LS40LjIgMCAuNi4xLjkuNEw4LjEgMTBsNy45LTcuOUwxNC4yIDVsLjUgLjUtLjUtLjVjLS4zLS4zLS43LS40LS45LS40LS4yIDAtLjYuMS0uOS40eiIvPgo8L3N2Zz4K'); /* Özel ok simgesi */
     background-repeat: no-repeat; /* Tekrarlamayı kapat */
     background-position: right 10px center; /* Ok simgesinin konumu */
     background-size: 16px; /* Ok simgesinin boyutu */
@@ -365,4 +365,47 @@ select.urun-boyut-secimi option {
     padding: 10px; /* Seçeneklerin iç boşluğu */
     background-color: #fff; /* Seçeneklerin arka plan rengi */
     color: #333; /* Seçeneklerin metin rengi */
+}
+
+/* Şarjlı ve fişli drop-down menü stili ve konumu */
+.sarjli-fisli-dropdown {
+    position: fixed;
+    top: 20px; /* Sayfanın soluna sabitle */
+    left: 20px;
+    z-index: 10;
+}
+
+.sarjli-fisli-dropdown select {
+    padding: 10px;
+    border: 2px solid #ff6347;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzMzMyIgZD0iTTEuMSA0LjhsNy45IDcuOSA3LjktNy45Yy4zLS4zLjctLjQuOS0uNC4yIDAgLjYuMS45LjRsMy41IDMuNXYuNS0uNWwtMy41LTMuNWMtLjQtLjQtLjktLjQtMS4yIDBMMTggMi41bC03LjkgNy45TDQuNCAyLjVjLS40LS40LS45LS40LTEuMiAwbC07LjkgNy45djUtLjVMMCA4LjFjLjMtLjMuNy0uNC45LS40LjIgMCAuNi4xLjkuNEw4LjEgMTBsNy45LTcuOUwxNC4yIDVsLjUgLjUtLjUtLjVjLS4zLS4zLS43LS40LS45LS40LS4yIDAtLjYuMS0uOS40eiIvPgo8L3N2Zz4K');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sarjli-fisli-dropdown select:hover {
+    border-color: #d75a93;
+    background-color: #f9f9f9;
+}
+
+.sarjli-fisli-dropdown select:focus {
+    outline: none;
+    border-color: #ff6347;
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
+}
+
+.sarjli-fisli-dropdown select option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
 }

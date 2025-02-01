@@ -23,6 +23,24 @@ header {
     border-bottom-right-radius: 50px;
 }
 
+/* Drop-down menü stili */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.dropdown select {
+    padding: 10px;
+    border: 2px solid #ff6347; /* Kırmızımsı çerçeve rengi */
+    border-radius: 5px;
+    background-color: #fff; /* Beyaz arka plan */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333; /* Metin rengi */
+}
+
 /* Başlık arka planının üzerine hafif bir opaklık katmanı ekleyerek okunurluğu arttırma */
 header::before {
     content: "";

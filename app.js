@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <h2>${urun.isim}</h2>
             <p class="urun-fiyat">Fiyat: ${urun.fiyat} TL</p>
             ${dropdownHTML}
+            <button class="ozellikler" data-ozellikler='${JSON.stringify(urun.ozellikler)}'>Özellikler</button>
             <a href="https://wa.me/905542345454?text=${encodeURIComponent(urun.isim + ' satın almak istiyorum.')}" class="satin-al">Satın Al</a>
         `;
 
@@ -125,6 +126,21 @@ document.addEventListener("DOMContentLoaded", function () {
             const yeniFiyat = urun.fiyat + urun.boyutlar[secilenBoyut];
             urunDiv.querySelector('.urun-fiyat').textContent = `Fiyat: ${yeniFiyat} TL`;
         });
+
+        // Özellikler butonu tıklama işlevi
+        urunDiv.querySelector('.ozellikler').addEventListener('click', function (event) {
+            const ozellikler = JSON.parse(event.target.getAttribute('data-ozellikler'));
+            const modal = document.getElementById("ozelliklerModal");
+            const modalContent = modal.querySelector(".modal-content");
+            const ozelliklerList = modalContent.querySelector("ul");
+            ozelliklerList.innerHTML = "";
+            ozellikler.forEach(ozellik => {
+                const li = document.createElement("li");
+                li.textContent = ozellik;
+                ozelliklerList.appendChild(li);
+            });
+            modal.style.display = "flex";
+        });
     });
 
     window.changeImage = function (event, direction) {
@@ -135,4 +151,17 @@ document.addEventListener("DOMContentLoaded", function () {
         images[currentIndex].style.display = 'none';
         images[nextIndex].style.display = 'block';
     };
+
+    // Modal kapatma işlevi
+    document.querySelector(".modal .close").addEventListener('click', function () {
+        document.getElementById("ozelliklerModal").style.display = "none";
+    });
+
+    // Modal dışına tıklama işlevi
+    window.addEventListener('click', function (event) {
+        const modal = document.getElementById("ozelliklerModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 });

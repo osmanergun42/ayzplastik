@@ -13,27 +13,20 @@
             <img src="ayzlogo.jpeg" alt="AyzPlastik Logo" id="logo">
         </div>
         <h1>AyzPlastik Ürün Kataloğu</h1>
-        <div class="dropdown">
-            <ul>
-                <li>
-                    <a href="#">Şarjlı Ürünler</a>
-                    <ul class="submenu">
-                        <li><a href="#" data-product-id="sarjli_isikli_top">Şarjlı Işıklı Top</a></li>
-                        <li><a href="#" data-product-id="sarjli_bistro_masa">Şarjlı Bistro Masa</a></li>
-                        <li><a href="#" data-product-id="sarjli_plastik_saksi">Şarjlı Plastik Saksı</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Fişli Ürünler</a>
-                    <ul class="submenu">
-                        <li><a href="#" data-product-id="fisli_isikli_top">Fişli Işıklı Top</a></li>
-                        <li><a href="#" data-product-id="fisli_bistro_masa">Fişli Bistro Masa</a></li>
-                        <li><a href="#" data-product-id="fisli_plastik_saksi">Fişli Plastik Saksı</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
     </header>
+
+    <!-- Şarjlı ve Fişli Ürünler Drop-down Menüsü -->
+    <div class="dropdown sarjli-fisli-dropdown">
+        <select>
+            <option value="" disabled selected>Şarjlı ve Fişli Ürünler</option>
+            <option value="sarjli_isikli_top" data-product-id="sarjli_isikli_top">Şarjlı Işıklı Top</option>
+            <option value="sarjli_bistro_masa" data-product-id="sarjli_bistro_masa">Şarjlı Bistro Masa</option>
+            <option value="sarjli_plastik_saksi" data-product-id="sarjli_plastik_saksi">Şarjlı Plastik Saksı</option>
+            <option value="fisli_isikli_top" data-product-id="fisli_isikli_top">Fişli Işıklı Top</option>
+            <option value="fisli_bistro_masa" data-product-id="fisli_bistro_masa">Fişli Bistro Masa</option>
+            <option value="fisli_plastik_saksi" data-product-id="fisli_plastik_saksi">Fişli Plastik Saksı</option>
+        </select>
+    </div>
 
     <!-- İletişim Bilgileri -->
     <div class="contact-info">
@@ -100,15 +93,12 @@
         }
 
         // Dropdown menüden ürün seçildiğinde yönlendirme işlevi
-        document.querySelectorAll('.submenu a').forEach(item => {
-            item.addEventListener('click', function(event) {
-                event.preventDefault();
-                const productId = event.target.getAttribute('data-product-id');
-                const productElement = document.getElementById(productId);
-                if (productElement) {
-                    productElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+        document.querySelector('.sarjli-fisli-dropdown select').addEventListener('change', function(event) {
+            const productId = event.target.options[event.target.selectedIndex].getAttribute('data-product-id');
+            const productElement = document.getElementById(productId);
+            if (productElement) {
+                productElement.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     </script>
 </body>

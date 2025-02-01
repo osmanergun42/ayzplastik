@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urunler = [
         {
-            isim: "IŞIKLI TOP",
+            isim: "FİŞLİ IŞIKLI KÜRE",
             fiyat: "2500 TL",
             resim: [
                 "isikli_top1.jpeg", 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         },
         {
-            isim: "BİSTRO MASA",
+            isim: "FİŞLİ BİSTRO MASA",
             fiyat: "6500 TL",
             resim: [
                 "bistro_masa1.jpeg", 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         },
         {
-            isim: "PLASTİK SAKSI",
+            isim: "FİŞLİ PLASTİK SAKSI",
             fiyat: "3500 TL",
             resim: [
                 "saksi1.jpeg", 

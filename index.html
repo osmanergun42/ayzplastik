@@ -14,13 +14,24 @@
         </div>
         <h1>AyzPlastik Ürün Kataloğu</h1>
         <div class="dropdown">
-            <select id="productMenu" onchange="navigateToProduct()">
-                <option value="">Ürün Seçin</option>
-                <option value="sarjli_isikli_bistro_masa">Şarjlı Işıklı Bistro Masa</option>
-                <option value="fisli_isikli_top">Fişli Işıklı Top</option>
-                <option value="fisli_bistro_masa">Fişli Bistro Masa</option>
-                <option value="fisli_plastik_saksi">Fişli Plastik Saksı</option>
-            </select>
+            <ul>
+                <li>
+                    <a href="#">Şarjlı Ürünler</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-product-id="sarjli_isikli_top">Şarjlı Işıklı Top</a></li>
+                        <li><a href="#" data-product-id="sarjli_bistro_masa">Şarjlı Bistro Masa</a></li>
+                        <li><a href="#" data-product-id="sarjli_plastik_saksi">Şarjlı Plastik Saksı</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Fişli Ürünler</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-product-id="fisli_isikli_top">Fişli Işıklı Top</a></li>
+                        <li><a href="#" data-product-id="fisli_bistro_masa">Fişli Bistro Masa</a></li>
+                        <li><a href="#" data-product-id="fisli_plastik_saksi">Fişli Plastik Saksı</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </header>
 
@@ -58,7 +69,6 @@
     </div>
 
     <script src="app.js"></script>
-
     <script>
         // Modal açma fonksiyonu
         window.openModal = function(productName) {
@@ -90,16 +100,16 @@
         }
 
         // Dropdown menüden ürün seçildiğinde yönlendirme işlevi
-        function navigateToProduct() {
-            const productMenu = document.getElementById('productMenu');
-            const selectedProduct = productMenu.value;
-            if (selectedProduct) {
-                const productElement = document.getElementById(selectedProduct);
+        document.querySelectorAll('.submenu a').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+                const productId = event.target.getAttribute('data-product-id');
+                const productElement = document.getElementById(productId);
                 if (productElement) {
                     productElement.scrollIntoView({ behavior: 'smooth' });
                 }
-            }
-        }
+            });
+        });
     </script>
 </body>
 </html>

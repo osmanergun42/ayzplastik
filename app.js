@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urunler = [
         {
-            isim: "FİŞLİ IŞIKLI TOP",
+            isim: "FİŞLİ IŞIKLI KÜRE",
             fiyat: 2500,
             resim: [
                 "isikli_top1.jpeg", 

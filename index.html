@@ -15,17 +15,9 @@
         <h1>AyzPlastik Ürün Kataloğu</h1>
     </header>
 
-    <!-- Şarjlı ve Fişli Ürünler Drop-down Menüsü -->
-    <div class="dropdown sarjli-fisli-dropdown">
-        <select>
-            <option value="" disabled selected>Şarjlı ve Fişli Ürünler</option>
-            <option value="sarjli_isikli_top" data-product-id="sarjli_isikli_top">Şarjlı Işıklı Top</option>
-            <option value="sarjli_bistro_masa" data-product-id="sarjli_bistro_masa">Şarjlı Bistro Masa</option>
-            <option value="sarjli_plastik_saksi" data-product-id="sarjli_plastik_saksi">Şarjlı Plastik Saksı</option>
-            <option value="fisli_isikli_top" data-product-id="fisli_isikli_top">Fişli Işıklı Top</option>
-            <option value="fisli_bistro_masa" data-product-id="fisli_bistro_masa">Fişli Bistro Masa</option>
-            <option value="fisli_plastik_saksi" data-product-id="fisli_plastik_saksi">Fişli Plastik Saksı</option>
-        </select>
+    <!-- Filtreleme Sistemi -->
+    <div class="filter-container">
+        <input type="text" id="filter-input" placeholder="Ürün ismi ile filtrele...">
     </div>
 
     <!-- İletişim Bilgileri -->
@@ -92,13 +84,18 @@
             }
         }
 
-        // Dropdown menüden ürün seçildiğinde yönlendirme işlevi
-        document.querySelector('.sarjli-fisli-dropdown select').addEventListener('change', function(event) {
-            const productId = event.target.options[event.target.selectedIndex].getAttribute('data-product-id');
-            const productElement = document.getElementById(productId);
-            if (productElement) {
-                productElement.scrollIntoView({ behavior: 'smooth' });
-            }
+        // Filtreleme sistemi
+        document.getElementById('filter-input').addEventListener('input', function(event) {
+            const filterText = event.target.value.toLowerCase();
+            const urunler = document.querySelectorAll('.urun');
+            urunler.forEach(urun => {
+                const urunIsim = urun.querySelector('h2').textContent.toLowerCase();
+                if (urunIsim.includes(filterText)) {
+                    urun.style.display = 'block';
+                } else {
+                    urun.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>

@@ -3,17 +3,16 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    /* Gül pembesi ve gökyüzü mavisi tonlarında yumuşak geçiş */
     background: linear-gradient(45deg, #FFB6C1 0%, #FFC0CB 50%, #87CEEB 100%);
-    color: #333; /* Metin rengi okunabilirliği arttırmak için */
+    color: #333;
     text-align: center;
-    position: relative; /* Video ile üst üste gelmesini sağlamak için */
+    position: relative;
 }
 
 /* Header düzeni */
 header {
     position: relative;
-    background: linear-gradient(135deg, #FFB6C1, #87CEEB); /* Gül pembesi ve gökyüzü mavisi geçişi */
+    background: linear-gradient(135deg, #FFB6C1, #87CEEB);
     padding: 30px 20px;
     color: white;
     text-align: center;
@@ -25,63 +24,19 @@ header {
 
 /* Drop-down menü stili */
 .dropdown {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 10;
-    background-color: #fff;
-    border: 2px solid #ff6347; /* Kırmızımsı çerçeve rengi */
-    border-radius: 5px;
-    padding: 10px; /* Menüye iç boşluk ekler */
+    display: inline-block;
+    margin-left: 20px; /* Sol tarafa hizalar */
+    margin-top: 10px; /* İletişim bilgileri ile hizalar */
 }
 
-.dropdown ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown > ul > li {
-    position: relative;
-}
-
-.dropdown a {
-    display: block;
+.dropdown select {
     padding: 10px;
+    border: 2px solid #ff6347;
+    border-radius: 5px;
     background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     color: #333;
-    text-decoration: none;
-    border-bottom: 1px solid #ff6347; /* Kırmızımsı çerçeve rengi */
-}
-
-.dropdown a:hover {
-    background-color: #ff6347;
-    color: white;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    z-index: 1000;
-    background-color: #fff;
-    border: 2px solid #ff6347; /* Kırmızımsı çerçeve rengi */
-}
-
-.dropdown > ul > li:hover > .submenu {
-    display: block;
-}
-
-.submenu a {
-    white-space: nowrap;
-}
-
-/* Ürün boyut seçimi drop-down menüsünü konumlandırma */
-select.urun-boyut-secimi {
-    position: fixed;
-    top: 100px; /* Başlığın sol altına sabitleme */
-    left: 20px;
 }
 
 /* Başlık arka planının üzerine hafif bir opaklık katmanı ekleyerek okunurluğu arttırma */
@@ -92,7 +47,7 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* Yarı saydam siyah katman */
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -111,7 +66,7 @@ header h1 {
 }
 
 header h1:hover {
-    color: #ff69b4; /* Hafif koyu pembe */
+    color: #ff69b4;
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -123,8 +78,8 @@ header h1:hover {
 }
 
 #logo {
-    width: 80px;  /* Logonun genişliği */
-    height: auto; /* Yükseklik otomatik olarak ayarlanır */
+    width: 80px;
+    height: auto;
 }
 
 /* İletişim bilgileri sağda olacak */
@@ -135,8 +90,8 @@ header h1:hover {
 /* İletişim detayları için stil */
 .contact-details {
     display: flex;
-    flex-direction: column; /* Logoları dikey sıralar */
-    align-items: center; /* Ortalamak için */
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Instagram logosu */
@@ -150,55 +105,55 @@ header h1:hover {
 .instagram-link {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    color: #000; /* Metin rengi siyah */
+    color: #000;
     text-decoration: none;
-    font-weight: 600; /* Metin ağırlığı */
+    font-weight: 600;
     display: flex;
-    align-items: center; /* Logo ve metni hizalamak için */
-    margin-bottom: 10px; /* Instagram ile WhatsApp arasında boşluk */
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 /* Instagram metninin stilini ayarlama */
 .instagram-text {
     font-size: 18px;
     font-weight: 700;
-    color: #3b5998; /* Instagram'ın karakteristik rengi */
+    color: #3b5998;
 }
 
 /* Instagram linki üzerine gelindiğinde yapılacak stil */
 .instagram-link:hover {
-    color: #ff69b4; /* Pembe renk hover efekti */
+    color: #ff69b4;
     text-decoration: underline;
 }
 
 /* WhatsApp logosunun boyutlandırılması */
 #whatsapp-logo {
-    width: 100px; /* WhatsApp logosu eski boyut */
-    height: auto; /* Yükseklik oranını koruyacak şekilde */
-    margin-right: 10px; /* Logo ile metin arasındaki mesafe */
-    margin-left: 10px; /* WhatsApp logosu ile metin arasındaki mesafe */
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .whatsapp-link {
     font-family: 'Roboto', sans-serif;
-    font-size: 24px; /* Numara fontunu büyütüyoruz */
-    color: #25D366; /* WhatsApp yeşil rengi */
+    font-size: 24px;
+    color: #25D366;
     text-decoration: none;
-    font-weight: 600; /* Font ağırlığı */
+    font-weight: 600;
     display: flex;
-    align-items: center; /* Logo ve metni hizalamak için */
-    justify-content: center; /* Ortalamak için */
+    align-items: center;
+    justify-content: center;
 }
 
 .whatsapp-link:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 /* WhatsApp logosunun altına hizalama */
 .whatsapp-container {
     display: flex;
-    align-items: center; /* Telefon numarasını yatayda hizalar */
-    margin-top: 10px; /* Instagram logosu ile WhatsApp logosu arasına boşluk ekler */
+    align-items: center;
+    margin-top: 10px;
 }
 
 /* Ürün listesi */
@@ -213,7 +168,7 @@ header h1:hover {
 .urun {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     margin: 20px;
     padding: 20px;
     width: 280px;
@@ -222,8 +177,8 @@ header h1:hover {
 }
 
 .urun:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .urun img {
@@ -237,7 +192,7 @@ header h1:hover {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 20px;
-    background-color: #ff6347; 
+    background-color: #ff6347;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -246,7 +201,7 @@ header h1:hover {
 }
 
 .satin-al:hover {
-    background-color: #d75a93; 
+    background-color: #d75a93;
 }
 
 /* Özellikler butonu */
@@ -254,7 +209,7 @@ header h1:hover {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 20px;
-    background-color: #4caf50; 
+    background-color: #4caf50;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -263,12 +218,12 @@ header h1:hover {
 }
 
 .ozellikler:hover {
-    background-color: #388e3c; 
+    background-color: #388e3c;
 }
 
 /* Modal Özellikler */
 .modal {
-    display: none;  
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -330,7 +285,7 @@ header h1:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Logoları dikey sıralar */
+    flex-direction: column;
 }
 
 /* Instagram ve WhatsApp logoları */
@@ -344,7 +299,7 @@ header h1:hover {
     width: 30px;
     height: auto;
     margin-right: 10px;
-    margin-left: 10px; /* WhatsApp logosu ile metin arasındaki mesafe */
+    margin-left: 10px;
 }
 
 /* Instagram linki */
@@ -356,7 +311,7 @@ header h1:hover {
     font-weight: 600;
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Instagram ile WhatsApp arasında boşluk */
+    margin-bottom: 10px;
 }
 
 /* WhatsApp linki */
@@ -368,39 +323,63 @@ header h1:hover {
     font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: center; /* Ortalamak için */
+    justify-content: center;
 }
 
 .whatsapp-link:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 /* Ok butonlarının temel stili */
 button.prev, button.next {
-    background-color: rgba(255, 255, 255, 0.5); /* Şeffaf arka plan */
-    color: #333; /* Metin rengi */
-    border: 2px solid #fff; /* Beyaz sınır */
-    font-size: 30px; /* Buton boyutu */
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    border: 2px solid #fff;
+    font-size: 30px;
     padding: 12px;
     border-radius: 50%;
     cursor: pointer;
 }
 
 button.prev:hover, button.next:hover {
-    background-color: #ff6347; /* Hover durumunda kırmızımsı renk */
-    color: white; /* Yazı rengi beyaz olur */
+    background-color: #ff6347;
+    color: white;
 }
 
-/* Ürün boyut seçimi drop-down menüsünü konumlandırma */
+/* Dropdown menü stili */
 select.urun-boyut-secimi {
-    position: fixed;
-    top: calc(100% - 50px);
-    left: 20px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff6347;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzMzMyIgZD0iTTEuMSA0LjhsNy45IDcuOSA3LjktNy45Yy4zLS4zLjctLjQuOS0uNC4yIDAgLjYuMS45LjRsMy41IDMuNXYuNS0uNWwtMy41LTMuNWMtLjQtLjQtLjktLjQtMS4yIDBMMTggMi41bC03LjkgNy45TDQuNCAyLjVjLS40LS40LS45LS40LTEuMiAwbC07LjkgNy45djUtLjVMMCA4LjFjLjMtLjMuNy0uNC45LS40LjIgMCAuNi4xLjkuNEw4LjEgMTBsNy45LTcuOUwxNC4yIDVsLjUgLjUtLjUtLjVjLS4zLS4zLS43LS40LS45LS40LS4yIDAtLjYuMS0uOS40eiIvPgo8L3N2Zz4K');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+select.urun-boyut-secimi:hover {
+    border-color: #d75a93;
+    background-color: #f9f9f9;
+}
+
+select.urun-boyut-secimi:focus {
+    outline: none;
+    border-color: #ff6347;
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
 }
 
 /* Dropdown menü seçenekleri */
 select.urun-boyut-secimi option {
-    padding: 10px; /* Seçeneklerin iç boşluğu */
-    background-color: #fff; /* Seçeneklerin arka plan rengi */
-    color: #333; /* Seçeneklerin metin rengi */
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
 }

@@ -39,6 +39,44 @@ header {
     color: #333;
 }
 
+/* Ürün boyut seçimi drop-down menüsünü konumlandırma */
+select.urun-boyut-secimi {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff6347;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzMzMyIgZD0iTTEuMSA0LjhsNy45IDcuOSA3LjktNy45Yy4zLS4zLjctLjQuOS0uNC4yIDAgLjYuMS45LjRsMy41IDMuNXYuNS0uNWwtMy41LTMuNWMtLjQtLjQtLjktLjQtMS4yIDBMMTggMi41bC03LjkgNy45TDQuNCAyLjVjLS40LS40LS45LS40LTEuMiAwbC07LjkgNy45djUtLjVMMCA4LjFjLjMtLjMuNy0uNC45LS40LjIgMCAuNi4xLjkuNEw4LjEgMTBsNy45LTcuOUwxNC4yIDVsLjUgLjUtLjUtLjVjLS4zLS4zLS43LS40LS45LS40LS4yIDAtLjYuMS0uOS40eiIvPgo8L3N2Zz4K');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+select.urun-boyut-secimi:hover {
+    border-color: #d75a93;
+    background-color: #f9f9f9;
+}
+
+select.urun-boyut-secimi:focus {
+    outline: none;
+    border-color: #ff6347;
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
+}
+
+/* Dropdown menü seçenekleri */
+select.urun-boyut-secimi option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
 /* Başlık arka planının üzerine hafif bir opaklık katmanı ekleyerek okunurluğu arttırma */
 header::before {
     content: "";
@@ -344,37 +382,6 @@ button.prev, button.next {
 button.prev:hover, button.next:hover {
     background-color: #ff6347;
     color: white;
-}
-
-/* Dropdown menü stili */
-select.urun-boyut-secimi {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ff6347;
-    border-radius: 5px;
-    background-color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzMzMyIgZD0iTTEuMSA0LjhsNy45IDcuOSA3LjktNy45Yy4zLS4zLjctLjQuOS0uNC4yIDAgLjYuMS45LjRsMy41IDMuNXYuNS0uNWwtMy41LTMuNWMtLjQtLjQtLjktLjQtMS4yIDBMMTggMi41bC03LjkgNy45TDQuNCAyLjVjLS40LS40LS45LS40LTEuMiAwbC07LjkgNy45djUtLjVMMCA4LjFjLjMtLjMuNy0uNC45LS40LjIgMCAuNi4xLjkuNEw4LjEgMTBsNy45LTcuOUwxNC4yIDVsLjUgLjUtLjUtLjVjLS4zLS4zLS43LS40LS45LS40LS4yIDAtLjYuMS0uOS40eiIvPgo8L3N2Zz4K');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 16px;
-}
-
-select.urun-boyut-secimi:hover {
-    border-color: #d75a93;
-    background-color: #f9f9f9;
-}
-
-select.urun-boyut-secimi:focus {
-    outline: none;
-    border-color: #ff6347;
-    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
 }
 
 /* Dropdown menü seçenekleri */

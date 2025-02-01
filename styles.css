@@ -31,14 +31,96 @@ header {
     z-index: 10;
 }
 
-.dropdown select {
+.dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown > ul > li {
+    position: relative;
+}
+
+.dropdown a {
+    display: block;
     padding: 10px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
     border: 2px solid #ff6347; /* Kırmızımsı çerçeve rengi */
     border-radius: 5px;
-    background-color: #fff; /* Beyaz arka plan */
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #333; /* Metin rengi */
+    margin-bottom: 5px;
+}
+
+.dropdown a:hover {
+    background-color: #ff6347;
+    color: white;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.dropdown > ul > li:hover > .submenu {
+    display: block;
+}
+
+.submenu a {
+    white-space: nowrap;
+}
+
+/* Dropdown menüyü ürünler listesinin sol üst köşesine taşımak için stil */
+#urunler-dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+#urunler-dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#urunler-dropdown > ul > li {
+    position: relative;
+}
+
+#urunler-dropdown a {
+    display: block;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border: 2px solid #ff6347; /* Kırmızımsı çerçeve rengi */
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#urunler-dropdown a:hover {
+    background-color: #ff6347;
+    color: white;
+}
+
+#urunler-dropdown .submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#urunler-dropdown > ul > li:hover > .submenu {
+    display: block;
+}
+
+#urunler-dropdown .submenu a {
+    white-space: nowrap;
 }
 
 /* Başlık arka planının üzerine hafif bir opaklık katmanı ekleyerek okunurluğu arttırma */

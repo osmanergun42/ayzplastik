@@ -64,6 +64,47 @@ header {
     color: #333; /* Seçeneklerin metin rengi */
 }
 
+/* Şarjlı ve Fişli drop-down menüsü stili */
+.sarjli-fisli-dropdown {
+    display: inline-block;
+    margin-left: 20px; /* Sol tarafa hizalar */
+    margin-top: 10px; /* İletişim bilgileri ile hizalar */
+}
+
+.sarjli-fisli-dropdown select {
+    padding: 10px;
+    border: 2px solid #ff6347; /* Kırmızımsı çerçeve rengi */
+    border-radius: 5px;
+    background-color: #fff; /* Beyaz arka plan */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333; /* Metin rengi */
+    -webkit-appearance: none; /* Tarayıcı stilini kaldır */
+    -moz-appearance: none; /* Tarayıcı stilini kaldır */
+    appearance: none; /* Tarayıcı stilini kaldır */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzMzMyIgZD0iTTEuMSA0LjhsNy45IDcuOSA3LjktNy45Yy4zLS4zLjctLjQuOS0uNC4yIDAgLjYuMS45LjRsMy41IDMuNXYuNS0uNWwtMy41LTMuNWMtLjQtLjQtLjktLjQtMS4yIDBMMTggMi41bC03LjkgNy45TDQuNCAyLjVjLS40LS40LS45LS40LTEuMiAwbC07LjkgNy45djUtLjVMMCA4LjFjLjMtLjMuNy0uNC45LS40LjIgMCAuNi4xLjkuNEw4LjEgMTBsNy45LTcuOUwxNC4yIDVsLjUgLjUtLjUtLjVjLS4zLS4zLS43LS40LS45LS40LS4yIDAtLjYuMS0uOS40eiIvPgo8L3N2Zz4K'); /* Özel ok simgesi */
+    background-repeat: no-repeat; /* Tekrarlamayı kapat */
+    background-position: right 10px center; /* Ok simgesinin konumu */
+    background-size: 16px; /* Ok simgesinin boyutu */
+}
+
+.sarjli-fisli-dropdown select:hover {
+    border-color: #d75a93; /* Hover durumunda çerçeve rengi */
+    background-color: #f9f9f9; /* Hover durumunda arka plan rengi */
+}
+
+.sarjli-fisli-dropdown select:focus {
+    outline: none; /* Focus durumunda dış çerçeveyi kaldır */
+    border-color: #ff6347; /* Focus durumunda çerçeve rengi */
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5); /* Focus durumunda gölge efekti */
+}
+
+.sarjli-fisli-dropdown select option {
+    padding: 10px; /* Seçeneklerin iç boşluğu */
+    background-color: #fff; /* Seçeneklerin arka plan rengi */
+    color: #333; /* Seçeneklerin metin rengi */
+}
+
 /* Başlık arka planının üzerine hafif bir opaklık katmanı ekleyerek okunurluğu arttırma */
 header::before {
     content: "";
@@ -112,6 +153,19 @@ header h1:hover {
     text-align: right;
 }
 
+/* İletişim detayları için stil */
+.contact-details {
+    display: flex;
+    flex-direction: column; /* Logoları dikey sıralar */
+    align-items: center; /* Ortalamak için */
+}
+
+/* Instagram logosu */
+#instagram-logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
 /* İletişim detayları için stil */
 .contact-details {
     display: flex;

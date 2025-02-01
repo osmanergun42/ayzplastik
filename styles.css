@@ -32,6 +32,7 @@ header {
     background-color: #fff;
     border: 2px solid #ff6347; /* Kırmızımsı çerçeve rengi */
     border-radius: 5px;
+    padding: 10px; /* Menüye iç boşluk ekler */
 }
 
 .dropdown ul {

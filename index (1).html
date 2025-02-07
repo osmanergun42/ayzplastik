@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyzPlastik Ürün Kataloğu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="ayzlogo.jpeg" alt="AyzPlastik Logo" id="logo">
+        </div>
+        <h1>AyzPlastik Ürün Kataloğu</h1>
+    </header>
+
+    <!-- Filtreleme Sistemi -->
+    <div class="filter-container">
+        <input type="text" id="filter-input" placeholder="Ürün ismi ile filtrele...">
+    </div>
+
+    <!-- İletişim Bilgileri -->
+    <div class="contact-info">
+        <p><strong>İletişim Bilgileri:</strong></p>
+        <div class="contact-details">
+            <!-- Instagram Logo -->
+            <img src="inslogo.png" alt="Instagram Logo" id="instagram-logo">
+            <a href="https://www.instagram.com/ayzplastik" class="instagram-link">
+                <span class="instagram-text">AYZPLASTIK</span>
+            </a>
+        </div>
+        <!-- WhatsApp Logo -->
+        <img src="wplogo.png" alt="WhatsApp Logo" id="whatsapp-logo">
+        <a href="https://wa.me/05542345454" class="whatsapp-link">05542345454</a>
+    </div>
+
+    <!-- Ürün Listesi -->
+    <main>
+        <section id="urunler">
+            <!-- Ürünler burada JavaScript ile yüklenecek -->
+        </section>
+    </main>
+
+    <!-- Modal Özellikler -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Ürün Özellikleri</h2>
+            <ul id="product-features">
+                <!-- Özellikler buraya ekleniyor -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Modal açma fonksiyonu
+        window.openModal = function(productName) {
+            document.getElementById('myModal').style.display = "flex";
+
+            // Ürün Özellikleri
+            const featuresList = document.getElementById('product-features');
+            featuresList.innerHTML = ""; // Listeyi temizle
+
+            // Ürün özelliklerini ekle
+            const urun = window.tumUrunler.find(item => item.isim === productName);
+            urun.ozellikler.forEach(feature => {
+                const li = document.createElement("li");
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        };
+
+        // Modal kapama fonksiyonu
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Modal dışında bir yere tıklanırsa da kapanmasını sağla
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal') || event.target == document.querySelector('.close')) {
+                closeModal();
+            }
+        }
+
+        // Filtreleme sistemi
+        document.getElementById('filter-input').addEventListener('input', function(event) {
+            const filterText = event.target.value.toLowerCase();
+            const urunler = document.querySelectorAll('.urun');
+            urunler.forEach(urun => {
+                const urunIsim = urun.querySelector('h2').textContent.toLowerCase();
+                if (urunIsim.includes(filterText)) {
+                    urun.style.display = 'block';
+                } else {
+                    urun.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

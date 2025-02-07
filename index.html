@@ -24,15 +24,17 @@
     <div class="contact-info">
         <p><strong>İletişim Bilgileri:</strong></p>
         <div class="contact-details">
-            <!-- Instagram Logo -->
-            <img src="inslogo.png" alt="Instagram Logo" id="instagram-logo">
-            <a href="https://www.instagram.com/ayzplastik" class="instagram-link">
+            <!-- Instagram Logo ve Link -->
+            <a href="https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==" class="instagram-link">
+                <img src="inslogo.png" alt="Instagram Logo" id="instagram-logo">
                 <span class="instagram-text">AYZPLASTIK</span>
             </a>
+            <!-- WhatsApp Logo ve Link -->
+            <a href="https://wa.me/05542345454" class="whatsapp-link">
+                <img src="wplogo.png" alt="WhatsApp Logo" id="whatsapp-logo">
+                <span class="whatsapp-number">05542345454</span>
+            </a>
         </div>
-        <!-- WhatsApp Logo -->
-        <img src="wplogo.png" alt="WhatsApp Logo" id="whatsapp-logo">
-        <a href="https://wa.me/05542345454" class="whatsapp-link">05542345454</a>
     </div>
 
     <!-- Ürün Listesi -->
@@ -96,6 +98,12 @@
                     urun.style.display = 'none';
                 }
             });
+        });
+
+        // Instagram yönlendirmesi
+        document.querySelector('.instagram-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==";
         });
     </script>
 </body>

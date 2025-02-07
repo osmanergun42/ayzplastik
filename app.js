@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const urunler = [
         {
             isim: "IŞIKLI KÜRE",
-            fiyat: 2500,
+            fiyat: 3000,
             resim: [
                 "isikli_top1.jpeg", 
                 "isiklitop2.jpeg", 
@@ -16,11 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Kolay taşınabilir tasarım"
             ],
             boyutlar: {
-                "10x10 cm": 0,
-                "20x20 cm": 500,
-                "30x30 cm": 1000
+                "20x20 cm": 0,
+                "30x30 cm": 1000,
+                "40x40 cm": 1500,
+                "50x50 cm": 2500,
+                "60x60 cm": 3500,
+                "80x80 cm": 5750,
+                "100x100 cm": 7000
             },
-            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+            sarjliFark: {
+                "20x20 cm": 750,
+                "30x30 cm": 500,
+                "40x40 cm": 1000,
+                "50x50 cm": 1000,
+                "60x60 cm": 1000,
+                "80x80 cm": 500,
+                "100x100 cm": 1000
+            }
         },
         {
             isim: "IŞIKLI SİLİNDİR",
@@ -40,9 +52,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "20x20 cm": 500,
                 "30x30 cm": 1000
             },
-            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+            sarjliFark: {
+                "10x10 cm": 1000,
+                "20x20 cm": 1500,
+                "30x30 cm": 2000
+            }
         },
-
         {
             isim: "FİLDİŞİ",
             fiyat: 6500,
@@ -61,7 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "20x20 cm": 500,
                 "30x30 cm": 1000
             },
-            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+            sarjliFark: {
+                "10x10 cm": 1000,
+                "20x20 cm": 1500,
+                "30x30 cm": 2000
+            }
         },
         {
             isim: "BİSTRO MASA",
@@ -85,7 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "70x70 cm": 700,
                 "80x80 cm": 1400
             },
-            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+            sarjliFark: {
+                "60x60 cm": 1000,
+                "70x70 cm": 1500,
+                "80x80 cm": 2000
+            }
         },
         {
             isim: "MANTAR ABAJUR",
@@ -110,9 +133,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "70x70 cm": 700,
                 "80x80 cm": 1400
             },
-            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+            sarjliFark: {
+                "60x60 cm": 1000,
+                "70x70 cm": 1500,
+                "80x80 cm": 2000
+            }
         },
-
         {
             isim: "PLASTİK SAKSI",
             fiyat: 3500,
@@ -133,7 +159,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "20x20 cm": 300,
                 "30x30 cm": 600
             },
-            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+            sarjliFark: {
+                "10x10 cm": 1000,
+                "20x20 cm": 1500,
+                "30x30 cm": 2000
+            }
         },
         {
             isim: "BAR MASASI",
@@ -155,19 +185,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 "80x80 cm": 800,
                 "90x90 cm": 1600
             },
-            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+            sarjliFark: {
+                "70x70 cm": 1000,
+                "80x80 cm": 1500,
+                "90x90 cm": 2000
+            }
         },
         {
             isim: "ŞEZLONG",
             fiyat: 4500,
             resim: [
-                "şezlong1.jpeg",
-                "şezlong2.jpeg",
-                "şezlong3.jpeg",
-                "şezlong4.jpeg",
-                "şezlong5.jpeg",
-                "şezlong6.jpeg",
-                "şezlong7.jpeg"
+                "sezlong1.jpeg",
+                "sezlong2.jpeg",
+                "sezlong3.jpeg",
+                "sezlong4.jpeg",
+                "sezlong5.jpeg",
+                "sezlong6.jpeg",
+                "sezlong7.jpeg"
             ],
             ozellikler: [
                 "Ergonomik tasarım",
@@ -179,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "70x70 cm": 0,
                 "80x80 cm": 800,
                 "90x90 cm": 1600
-            },
+            }
         }
     ];
 
@@ -263,12 +297,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (boyutSecimi) {
             const secilenBoyut = boyutSecimi.value;
             yeniFiyat += urun.boyutlar[secilenBoyut];
-        }
-        
-        if (tipSecimi) {
-            const secilenTip = tipSecimi.value;
-            if (secilenTip === "sarjli") {
-                yeniFiyat += urun.sarjliFark;
+            
+            if (tipSecimi) {
+                const secilenTip = tipSecimi.value;
+                if (secilenTip === "sarjli") {
+                    yeniFiyat += urun.sarjliFark[secilenBoyut];
+                }
             }
         }
         

@@ -58,13 +58,13 @@
         // Modal açma fonksiyonu
         window.openModal = function(productName) {
             document.getElementById('myModal').style.display = "flex";
-            
+
             // Ürün Özellikleri
             const featuresList = document.getElementById('product-features');
             featuresList.innerHTML = ""; // Listeyi temizle
 
             // Ürün özelliklerini ekle
-            const urun = urunler.find(item => item.isim === productName);
+            const urun = window.tumUrunler.find(item => item.isim === productName);
             urun.ozellikler.forEach(feature => {
                 const li = document.createElement("li");
                 li.textContent = feature;

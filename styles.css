@@ -362,7 +362,7 @@ select.urun-boyut-secimi:focus {
 
 /* Dropdown menü seçenekleri */
 select.urun-boyut-secimi option {
-    padding: 10px;
+    padding: 1px;
     background-color: #fff;
     color: #333;
 }
@@ -404,14 +404,8 @@ select.urun-boyut-secimi option {
 }
 
 /* Şarjlı ve fişli drop-down menü stili ve konumu */
-.sarjli-fisli-dropdown {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-}
-
-.sarjli-fisli-dropdown select {
+select.urun-tip-secimi {
+    width: 100%;
     padding: 10px;
     border: 2px solid #ff6347;
     border-radius: 5px;
@@ -419,6 +413,7 @@ select.urun-boyut-secimi option {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #333;
+    margin-top: 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -429,18 +424,18 @@ select.urun-boyut-secimi option {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sarjli-fisli-dropdown select:hover {
+select.urun-tip-secimi:hover {
     border-color: #d75a93;
     background-color: #f9f9f9;
 }
 
-.sarjli-fisli-dropdown select:focus {
+select.urun-tip-secimi:focus {
     outline: none;
     border-color: #ff6347;
     box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
 }
 
-.sarjli-fisli-dropdown select option {
+select.urun-tip-secimi option {
     padding: 10px;
     background-color: #fff;
     color: #333;

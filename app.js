@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urunler = [
         {
-            isim: "FİŞLİ IŞIKLI KÜRE",
+            isim: "IŞIKLI KÜRE",
             fiyat: 2500,
             resim: [
                 "isikli_top1.jpeg", 
@@ -19,10 +19,52 @@ document.addEventListener("DOMContentLoaded", function () {
                 "10x10 cm": 0,
                 "20x20 cm": 500,
                 "30x30 cm": 1000
-            }
+            },
+            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
         },
         {
-            isim: "FİŞLİ BİSTRO MASA",
+            isim: "IŞIKLI SİLİNDİR",
+            fiyat: 3000,
+            resim: [
+                "silindir1.jpeg", 
+                "silindir2.jpeg" 
+            ],
+            ozellikler: [
+                "Göz alıcı ışık efektleri",
+                "Renk değiştirebilen LED ışıklar",
+                "Uzun ömürlü batarya",
+                "Kolay taşınabilir tasarım"
+            ],
+            boyutlar: {
+                "10x10 cm": 0,
+                "20x20 cm": 500,
+                "30x30 cm": 1000
+            },
+            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+        },
+
+        {
+            isim: "FİLDİŞİ",
+            fiyat: 6500,
+            resim: [
+                "fildisi1.jpeg", 
+                "fildisi2.jpeg" 
+            ],
+            ozellikler: [
+                "Göz alıcı ışık efektleri",
+                "Renk değiştirebilen LED ışıklar",
+                "Uzun ömürlü batarya",
+                "Kolay taşınabilir tasarım"
+            ],
+            boyutlar: {
+                "10x10 cm": 0,
+                "20x20 cm": 500,
+                "30x30 cm": 1000
+            },
+            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+        },
+        {
+            isim: "BİSTRO MASA",
             fiyat: 6500,
             resim: [
                 "bistro_masa1.jpeg", 
@@ -42,10 +84,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 "60x60 cm": 0,
                 "70x70 cm": 700,
                 "80x80 cm": 1400
-            }
+            },
+            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
         },
         {
-            isim: "FİŞLİ PLASTİK SAKSI",
+            isim: "MANTAR ABAJUR",
+            fiyat: 6500,
+            resim: [
+                "abajur1.jpeg", 
+                "abajur2.jpeg", 
+                "abajur3.jpeg", 
+                "abajur4.jpeg", 
+                "abajur5.jpeg",
+                "abajur6.jpeg"  
+            ],
+            ozellikler: [
+                "Polietilen malzemeden imal edilmektedir.",
+                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
+                "65*45*105H cm ölçülerindedir",
+                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
+                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
+            ],
+            boyutlar: {
+                "60x60 cm": 0,
+                "70x70 cm": 700,
+                "80x80 cm": 1400
+            },
+            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+        },
+
+        {
+            isim: "PLASTİK SAKSI",
             fiyat: 3500,
             resim: [
                 "saksi1.jpeg", 
@@ -63,33 +132,79 @@ document.addEventListener("DOMContentLoaded", function () {
                 "10x10 cm": 0,
                 "20x20 cm": 300,
                 "30x30 cm": 600
-            }
+            },
+            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+        },
+        {
+            isim: "BAR MASASI",
+            fiyat: 7500,
+            resim: [
+                "barmasasi1.jpeg", 
+                "barmasasi2.jpeg", 
+                "barmasasi3.jpeg", 
+                "barmasasi4.jpeg"  
+            ],
+            ozellikler: [
+                "Modern tasarım",
+                "Dayanıklı malzeme",
+                "Kolay taşınabilir",
+                "Şık ve fonksiyonel"
+            ],
+            boyutlar: {
+                "70x70 cm": 0,
+                "80x80 cm": 800,
+                "90x90 cm": 1600
+            },
+            sarjliFark: 1000 // Şarjlı ürün için ek fiyat
+        },
+        {
+            isim: "ŞEZLONG",
+            fiyat: 4500,
+            resim: [
+                "şezlong1.jpeg",
+                "şezlong2.jpeg",
+                "şezlong3.jpeg",
+                "şezlong4.jpeg",
+                "şezlong5.jpeg",
+                "şezlong6.jpeg",
+                "şezlong7.jpeg"
+            ],
+            ozellikler: [
+                "Ergonomik tasarım",
+                "Dayanıklı malzeme",
+                "Kolay taşınabilir",
+                "Rahat ve konforlu"
+            ],
+            boyutlar: {
+                "70x70 cm": 0,
+                "80x80 cm": 800,
+                "90x90 cm": 1600
+            },
         }
     ];
 
-    // Ürünlerin kopyalarını oluştur ve isimlerini "ŞARJLI" olarak değiştir, fiyatlarına 1000 TL ekle
-    const sarjliUrunler = urunler.map(urun => ({
-        ...urun,
-        isim: urun.isim.replace("FİŞLİ", "ŞARJLI"),
-        fiyat: urun.fiyat + 1000
-    }));
-
-    // Orijinal ürünleri ve şarjlı ürünleri birleştir
-    const tumUrunler = [...urunler, ...sarjliUrunler];
-
     const urunlerContainer = document.getElementById("urunler");
 
-    tumUrunler.forEach(urun => {
+    urunler.forEach(urun => {
         const urunDiv = document.createElement("div");
         urunDiv.classList.add("urun");
         urunDiv.id = urun.isim.toLowerCase().replace(/\s+/g, '_');
 
-        // Dropdown menü oluştur
-        let dropdownHTML = '<select class="urun-boyut-secimi">';
+        // Dropdown menüler oluştur
+        let dropdownHTML = '<div class="dropdown-container">';
+        dropdownHTML += '<select class="urun-boyut-secimi">';
         for (const boyut in urun.boyutlar) {
             dropdownHTML += `<option value="${boyut}">${boyut}</option>`;
         }
         dropdownHTML += '</select>';
+
+        if (urun.sarjliFark !== undefined) {
+            dropdownHTML += '<select class="urun-tip-secimi">';
+            dropdownHTML += `<option value="fisli">Fişli</option>`;
+            dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
+            dropdownHTML += '</select>';
+        }
+        dropdownHTML += '</div>';
 
         let imagesHTML = '';
         if (Array.isArray(urun.resim)) {
@@ -117,34 +232,48 @@ document.addEventListener("DOMContentLoaded", function () {
             <h2 id="${urun.isim.toLowerCase().replace(/\s+/g, '_')}">${urun.isim}</h2>
             <p class="urun-fiyat">Fiyat: ${urun.fiyat} TL</p>
             ${dropdownHTML}
-            <button class="ozellikler" data-ozellikler='${JSON.stringify(urun.ozellikler)}'>Özellikler</button>
+            <button class="ozellikler" onclick="openModal('${urun.isim}')">Özellikler</button>
             <a href="https://wa.me/905542345454?text=${encodeURIComponent(urun.isim + ' satın almak istiyorum.')}" class="satin-al">Satın Al</a>
         `;
 
         urunlerContainer.appendChild(urunDiv);
 
         // Fiyatı güncelleme işlevi
-        urunDiv.querySelector('.urun-boyut-secimi').addEventListener('change', function (event) {
-            const secilenBoyut = event.target.value;
-            const yeniFiyat = urun.fiyat + urun.boyutlar[secilenBoyut];
-            urunDiv.querySelector('.urun-fiyat').textContent = `Fiyat: ${yeniFiyat} TL`;
-        });
-
-        // Özellikler butonu tıklama işlevi
-        urunDiv.querySelector('.ozellikler').addEventListener('click', function (event) {
-            const ozellikler = JSON.parse(event.target.getAttribute('data-ozellikler'));
-            const modal = document.getElementById("myModal");
-            const modalContent = modal.querySelector(".modal-content");
-            const ozelliklerList = modalContent.querySelector("ul#product-features");
-            ozelliklerList.innerHTML = "";
-            ozellikler.forEach(ozellik => {
-                const li = document.createElement("li");
-                li.textContent = ozellik;
-                ozelliklerList.appendChild(li);
+        const boyutSecimi = urunDiv.querySelector('.urun-boyut-secimi');
+        const tipSecimi = urunDiv.querySelector('.urun-tip-secimi');
+        
+        if (boyutSecimi) {
+            boyutSecimi.addEventListener('change', function () {
+                updatePrice(urunDiv, urun);
             });
-            modal.style.display = "flex";
-        });
+        }
+
+        if (tipSecimi) {
+            tipSecimi.addEventListener('change', function () {
+                updatePrice(urunDiv, urun);
+            });
+        }
     });
+
+    function updatePrice(urunDiv, urun) {
+        const boyutSecimi = urunDiv.querySelector('.urun-boyut-secimi');
+        const tipSecimi = urunDiv.querySelector('.urun-tip-secimi');
+        
+        let yeniFiyat = urun.fiyat;
+        if (boyutSecimi) {
+            const secilenBoyut = boyutSecimi.value;
+            yeniFiyat += urun.boyutlar[secilenBoyut];
+        }
+        
+        if (tipSecimi) {
+            const secilenTip = tipSecimi.value;
+            if (secilenTip === "sarjli") {
+                yeniFiyat += urun.sarjliFark;
+            }
+        }
+        
+        urunDiv.querySelector('.urun-fiyat').textContent = `Fiyat: ${yeniFiyat} TL`;
+    }
 
     window.changeImage = function (event, direction) {
         const images = event.target.closest('.urun-gorseller').querySelectorAll('.urun-gorsel-container');

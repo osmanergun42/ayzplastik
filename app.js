@@ -47,11 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Uzun ömürlü batarya",
                 "Kolay taşınabilir tasarım"
             ],
-            boyutlar: {
-                "10x10 cm": 0,
-                "20x20 cm": 500,
-                "30x30 cm": 1000
-            },
             sarjliFark: {
                 "10x10 cm": 1000,
                 "20x20 cm": 1500,
@@ -71,11 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Uzun ömürlü batarya",
                 "Kolay taşınabilir tasarım"
             ],
-            boyutlar: {
-                "10x10 cm": 0,
-                "20x20 cm": 500,
-                "30x30 cm": 1000
-            },
             sarjliFark: {
                 "10x10 cm": 1000,
                 "20x20 cm": 1500,
@@ -93,17 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 "bistromasa5.jpeg"  
             ],
             ozellikler: [
+                "Ürünümüz:",
                 "Polietilen malzemeden imal edilmektedir.",
                 "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
                 "65*45*105H cm ölçülerindedir",
                 "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
-            boyutlar: {
-                "60x60 cm": 0,
-                "70x70 cm": 700,
-                "80x80 cm": 1400
-            },
             sarjliFark: {
                 "60x60 cm": 1000,
                 "70x70 cm": 1500,
@@ -128,11 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
-            boyutlar: {
-                "60x60 cm": 0,
-                "70x70 cm": 700,
-                "80x80 cm": 1400
-            },
             sarjliFark: {
                 "60x60 cm": 1000,
                 "70x70 cm": 1500,
@@ -180,11 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Kolay taşınabilir",
                 "Şık ve fonksiyonel"
             ],
-            boyutlar: {
-                "70x70 cm": 0,
-                "80x80 cm": 800,
-                "90x90 cm": 1600
-            },
             sarjliFark: {
                 "70x70 cm": 1000,
                 "80x80 cm": 1500,
@@ -208,12 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Dayanıklı malzeme",
                 "Kolay taşınabilir",
                 "Rahat ve konforlu"
-            ],
-            boyutlar: {
-                "70x70 cm": 0,
-                "80x80 cm": 800,
-                "90x90 cm": 1600
-            }
+            ]
         }
     ];
 
@@ -226,11 +197,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Dropdown menüler oluştur
         let dropdownHTML = '<div class="dropdown-container">';
-        dropdownHTML += '<select class="urun-boyut-secimi">';
-        for (const boyut in urun.boyutlar) {
-            dropdownHTML += `<option value="${boyut}">${boyut}</option>`;
+        if (urun.isim === "IŞIKLI KÜRE" || urun.isim === "PLASTİK SAKSI") {
+            dropdownHTML += '<select class="urun-boyut-secimi">';
+            for (const boyut in urun.boyutlar) {
+                dropdownHTML += `<option value="${boyut}">${boyut}</option>`;
+            }
+            dropdownHTML += '</select>';
         }
-        dropdownHTML += '</select>';
 
         if (urun.sarjliFark !== undefined) {
             dropdownHTML += '<select class="urun-tip-secimi">';
@@ -304,6 +277,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     yeniFiyat += urun.sarjliFark[secilenBoyut];
                 }
             }
+        } else if (tipSecimi) {
+            const secilenTip = tipSecimi.value;
+            if (secilenTip === "sarjli") {
+                yeniFiyat += urun.sarjliFark[Object.keys(urun.sarjliFark)[0]];
+            }
         }
         
         urunDiv.querySelector('.urun-fiyat').textContent = `Fiyat: ${yeniFiyat} TL`;
@@ -318,18 +296,33 @@ document.addEventListener("DOMContentLoaded", function () {
         images[nextIndex].style.display = 'block';
     };
 
-    // Modal kapatma işlevi
-    document.querySelector(".modal .close").addEventListener('click', function () {
-        document.getElementById("myModal").style.display = "none";
-    });
+    // Modal açma ve kapatma işlevleri
+    window.openModal = function(productName) {
+        const modal = document.getElementById("myModal");
+        const featuresList = document.getElementById("product-features");
+        featuresList.innerHTML = ""; // Listeyi temizle
 
-    // Modal dışına tıklama işlevi
-    window.addEventListener('click', function (event) {
+        // Ürün özelliklerini ekle
+        const urun = urunler.find(item => item.isim === productName);
+        urun.ozellikler.forEach(feature => {
+            const li = document.createElement("li");
+            li.textContent = feature;
+            featuresList.appendChild(li);
+        });
+
+        modal.style.display = "block";
+    };
+
+    window.closeModal = function() {
+        document.getElementById("myModal").style.display = "none";
+    };
+
+    window.onclick = function(event) {
         const modal = document.getElementById("myModal");
         if (event.target === modal) {
             modal.style.display = "none";
         }
-    });
+    };
 
     // Filtreleme sistemi
     document.getElementById('filter-input').addEventListener('input', function(event) {
@@ -343,5 +336,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 urun.style.display = 'none';
             }
         });
+    });
+
+    // Instagram yönlendirmesi
+    document.querySelector('.instagram-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = "https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==";
     });
 });

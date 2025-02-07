@@ -171,13 +171,13 @@ document.addEventListener("DOMContentLoaded", function () {
             isim: "ŞEZLONG",
             fiyat: 4500,
             resim: [
-                "sezlong1.jpeg",
-                "sezlong2.jpeg",
-                "sezlong3.jpeg",
-                "sezlong4.jpeg",
-                "sezlong5.jpeg",
-                "sezlong6.jpeg",
-                "sezlong7.jpeg"
+                "şezlong1.jpeg",
+                "şezlong2.jpeg",
+                "şezlong3.jpeg",
+                "şezlong4.jpeg",
+                "şezlong5.jpeg",
+                "şezlong6.jpeg",
+                "şezlong7.jpeg"
             ],
             ozellikler: [
                 "Ergonomik tasarım",

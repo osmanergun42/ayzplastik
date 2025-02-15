@@ -364,8 +364,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Kumandası ile istediğiniz hızda ve renkte kullanabilirsiniz",
                 "Ürünün maddesi polietilendir plastiktir",
                 "İç çapı 270 cm x Yükselik 120 cm x En 70 cm"
-            ]
+            ],
+      
+           sarjliFark: {
+                "44-40-175 cm": 5000
+
+            },
+            isiksizFark: {
+                "44-40-175 cm": -2000
+
+            }
         },
+        
         {
             isim: "ŞEZLONG",
             fiyat: 4500,

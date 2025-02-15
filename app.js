@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             isim: "BAR MASASI",
-            fiyat: 7500,
+            fiyat: 67000,
             resim: [
                 "barmasasi1.jpeg", 
                 "barmasasi2.jpeg", 
@@ -330,15 +330,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 "barmasasi4.jpeg"  
             ],
             ozellikler: [
-                "Modern tasarım",
-                "Dayanıklı malzeme",
-                "Kolay taşınabilir",
-                "Şık ve fonksiyonel"
+                "Ürün karşılama ve bar masası 7 parçanın birleşimiyle birlikte oluşuyor",
+                "Işıklı ve fişli olan modelimiz",
+                "4 ana 12 ara renk mevcuttur",
+                "Kumandası ile istediğiniz hızda ve renkte kullanabilirsiniz",
+                "Ürünün maddesi polietilendir plastiktir",
+                "İç çapı 270 cm x Yükselik 120 cm x En 70 cm"
             ],
             sarjliFark: {
-                "70x70 cm": 1000,
-                "80x80 cm": 1500,
-                "90x90 cm": 2000
+                "70x70 cm": 5000
+            },
+            isiksizFark: {
+                "50X40X50 cm": -2000,
+
+
             }
         },
         {

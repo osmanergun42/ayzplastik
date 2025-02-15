@@ -92,9 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
             isim: "DEKOR BURGU",
             fiyat: 15000,
             resim: [
-                "dekor1.jpeg", 
-                "dekor2.jpeg", 
-                "dekor3.jpeg"
+                "dekor1.jpg", 
+                "dekor2.jpg", 
+                "dekor3.jpg"
             ],
             ozellikler: [
                 "Polietilen malzemeden imal edilmektedir.",

@@ -223,8 +223,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         },
         {
-            isim: "PLASTİK SAKSI",
-            fiyat: 3500,
+            isim: "KONİK PLASTİK SAKSI",
+            fiyat: 9500,
             resim: [
                 "saksi1.jpeg", 
                 "saksi2.jpeg", 
@@ -238,15 +238,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Kolay taşınabilir"
             ],
             boyutlar: {
-                "10x10 cm": 0,
-                "20x20 cm": 300,
-                "30x30 cm": 600
+                "50X40X50 cm": 0,
+                "70X50X70 cm": 500,
+                "90X60X90 cm": 3500
             },
-            sarjliFark: {
-                "10x10 cm": 1000,
-                "20x20 cm": 1500,
-                "30x30 cm": 2000
+             isiksizFark: {
+                "50X40X50 cm": -1000,
+                "70X50X70 cm": -1000,
+                "90x60x90 cm": -1000
+
             }
+
         },
         {
             isim: "BAR MASASI",
@@ -307,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dropdownHTML += '</select>';
         }
 
-        if (urun.sarjliFark !== undefined) {
+        if (urun.sarjliFark !== "KONİK PLASTİK SAKSI") {
             dropdownHTML += '<select class="urun-tip-secimi">';
             dropdownHTML += `<option value="fisli">Fişli</option>`;
             dropdownHTML += `<option value="sarjli">Şarjlı</option>`;

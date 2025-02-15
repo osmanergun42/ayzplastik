@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             isim: "BİSTRO MASA",
-            fiyat: 6500,
+            fiyat: 8000,
             resim: [
                 "bistro_masa1.jpeg", 
                 "bistromasa2.jpeg", 
@@ -212,9 +212,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
             sarjliFark: {
-                "60x60 cm": 1000,
-                "70x70 cm": 1500,
-                "80x80 cm": 2000
+                "60x60 cm": 1000
+            },
+            isiksizFark: {
+                "60x60 cm": -1000
+
             }
         },
         {

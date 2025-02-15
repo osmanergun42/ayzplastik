@@ -45,6 +45,34 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         },
         {
+            isim: "PLASTİK LOCA",
+            fiyat: 42000,
+            resim: [
+                "loca1.jpeg", 
+                "loca2.jpeg", 
+                "loca3.jpeg",
+                "loca4.jpeg",
+                "loca5.jpeg", 
+                "loca6.jpeg",
+                "loca7.jpeg"
+            ],
+            ozellikler: [
+                "Polietilen malzemeden imal edilmektedir.",
+                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
+                "60X60X60",
+                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
+                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
+            ],
+            sarjliFark: {
+                "40X40X40 cm": 1000
+
+            },
+            isiksizFark: {
+                "44-40-175 cm": 0
+
+            }
+        },
+        {
             isim: "IŞIKLI SİLİNDİR",
             fiyat: 3000,
             resim: [
@@ -387,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (urun.sarjliFark !== undefined) {
             dropdownHTML += '<select class="urun-tip-secimi">';
             dropdownHTML += `<option value="fisli">Fişli</option>`;
-            if (urun.isim !== "KONİK PLASTİK SAKSI") {
+            if (urun.isim !== "KONİK PLASTİK SAKSI" || "PLASTİK LOCA") {
                 dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
             }
             if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || urun.isim === "FİLDİŞİ" || urun.isim === "BİSTRO MASA" || urun.isim === "KOLON AYDINLATMA" || urun.isim === "DEKOR BURGU") {

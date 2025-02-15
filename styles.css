@@ -83,7 +83,7 @@ header h1:hover {
 
 /* Instagram logosu */
 #instagram-logo {
-    width: 30px;
+    width: 15px;
     height: auto;
     margin-right: 10px;
 }
@@ -91,18 +91,18 @@ header h1:hover {
 /* Instagram linki stilini güncelleme */
 .instagram-link {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 10px;
     color: #000;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 300;
     display: flex;
     align-items: center;
 }
 
 /* Instagram metninin stilini ayarlama */
 .instagram-text {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 10px;
+    font-weight: 300;
     color: #3b5998;
 }
 
@@ -114,17 +114,17 @@ header h1:hover {
 
 /* WhatsApp logosunun boyutlandırılması */
 #whatsapp-logo {
-    width: 30px;
+    width: 10px;
     height: auto;
     margin-right: 10px;
 }
 
 .whatsapp-link {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 10px;
     color: #25D366;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 300;
     display: flex;
     align-items: center;
 }

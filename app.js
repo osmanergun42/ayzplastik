@@ -309,10 +309,13 @@ document.addEventListener("DOMContentLoaded", function () {
             dropdownHTML += '</select>';
         }
 
-        if (urun.sarjliFark !== undefined && urun.isim !== "KONİK PLASTİK SAKSI") {
+        if (urun.sarjliFark !== undefined) {
             dropdownHTML += '<select class="urun-tip-secimi">';
             dropdownHTML += `<option value="fisli">Fişli</option>`;
-            dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
+           if (urun.isim !== "KONİK PLASTİK SAKSI") {
+                dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
+           }
+        }
             if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI") {
                 dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
             }

@@ -33,6 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 "80x80 cm": 500,
                 "100x100 cm": 1000
             }
+            isiksizFark: {
+                "20x20 cm": -1000,
+                "30x30 cm": -1000,
+                "40x40 cm": -500,
+                "50x50 cm": -1000,
+                "60x60 cm": -1500,
+                "80x80 cm": -750,
+                "100x100 cm": -1000
+
+            }
         },
         {
             isim: "IŞIKLI SİLİNDİR",
@@ -315,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (urun.isim !== "KONİK PLASTİK SAKSI") {
                 dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
             }
-            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI") {
+            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE") {
                 dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
             }
             dropdownHTML += '</select>';

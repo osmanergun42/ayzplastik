@@ -364,15 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Kumandası ile istediğiniz hızda ve renkte kullanabilirsiniz",
                 "Ürünün maddesi polietilendir plastiktir",
                 "İç çapı 270 cm x Yükselik 120 cm x En 70 cm"
-            ],
-            sarjliFark: {
-                "70x70 cm": 5000
-            },
-            isiksizFark: {
-                "50X40X50 cm": -2000,
-
-
-            }
+            ]
         },
         {
             isim: "ŞEZLONG",

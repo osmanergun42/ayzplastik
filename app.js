@@ -118,6 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "60x60 cm": 1000,
                 "70x70 cm": 1500,
                 "80x80 cm": 2000
+            },
+            isiksizFark: {
+                "60x60 cm": -2000,
+                "70x70 cm": -2500,
+                "80x80 cm": -3000
             }
         },
         {
@@ -209,6 +214,9 @@ document.addEventListener("DOMContentLoaded", function () {
             dropdownHTML += '<select class="urun-tip-secimi">';
             dropdownHTML += `<option value="fisli">Fişli</option>`;
             dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
+            if (urun.isim === "MANTAR ABAJUR") {
+                dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
+            }
             dropdownHTML += '</select>';
         }
         dropdownHTML += '</div>';
@@ -275,12 +283,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 const secilenTip = tipSecimi.value;
                 if (secilenTip === "sarjli") {
                     yeniFiyat += urun.sarjliFark[secilenBoyut];
+                } else if (secilenTip === "isiksiz" && urun.isiksizFark) {
+                    yeniFiyat += urun.isiksizFark[secilenBoyut];
                 }
             }
         } else if (tipSecimi) {
             const secilenTip = tipSecimi.value;
             if (secilenTip === "sarjli") {
                 yeniFiyat += urun.sarjliFark[Object.keys(urun.sarjliFark)[0]];
+            } else if (secilenTip === "isiksiz" && urun.isiksizFark) {
+                yeniFiyat += urun.isiksizFark[Object.keys(urun.isiksizFark)[0]];
             }
         }
         

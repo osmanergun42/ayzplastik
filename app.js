@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             isim: "MANTAR ABAJUR",
-            fiyat: 6500,
+            fiyat: 20000,
             resim: [
                 "abajur1.jpeg", 
                 "abajur2.jpeg", 
@@ -115,14 +115,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
             sarjliFark: {
-                "60x60 cm": 1000,
-                "70x70 cm": 1500,
-                "80x80 cm": 2000
+                "44-40-175 cm": 1000
+
             },
             isiksizFark: {
-                "60x60 cm": -2000,
-                "70x70 cm": -2500,
-                "80x80 cm": -3000
+                "44-40-175 cm": -2000
+
             }
         },
         {

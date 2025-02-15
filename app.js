@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ozellikler: [
                 "Polietilen malzemeden imal edilmektedir.",
                 "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
-                "65*45*105H cm ölçülerindedir",
+                "ÜST ÇAP:44 CM ALT ÇAP:40 YÜKSEKLİK:175",
                 "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],

@@ -61,8 +61,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Minderleri ile birlikte gelir.",
                 "Işıklı olup şarjlı ve ya fişli seçenekleri mevcuttur",
                 "4 ana 12 ara renk mevcuttur.",
-                "kumandası ile istediğin hızda ve renkte kullanılabilirsiniz."
+                "Kumandası ile istediğin hızda ve renkte kullanılabilirsiniz."
             ],
+        },
+        {
+            isim: "KARŞILAMA MASASI",
+            fiyat: 9000,
+            resim: [
+                "karşılama1.jpeg", 
+                "karşılama2.jpeg", 
+                "karşılama3.jpeg"
+            ],
+            ozellikler: [
+                "Ürün plastik loca üst kısmı pistonlarla açılıp kapanabilir.",
+                "Minderleri ile birlikte gelir.",
+                "Işıklı olup şarjlı ve ya fişli seçenekleri mevcuttur",
+                "4 ana 12 ara renk mevcuttur.",
+                "Kumandası ile istediğin hızda ve renkte kullanılabilirsiniz."
+            ],
+             sarjliFark: {
+                "40X40X40 cm": 1000
+
+            },
+            isiksizFark: {
+                "44-40-175 cm": -1000
+
+            }
         },
         {
             isim: "IŞIKLI SİLİNDİR",

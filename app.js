@@ -54,6 +54,30 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         },
         {
+            isim: "BAR KOLTUĞU",
+            fiyat: 8000,
+            resim: [
+                "küpoturma1.jpeg", 
+                "küpoturma2.jpeg", 
+                "küpoturma3.jpeg"     
+            ],
+            ozellikler: [
+                "Polietilen malzemeden imal edilmektedir.",
+                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
+                "60X60X60",
+                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
+                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
+            ],
+            sarjliFark: {
+                "40X40X40 cm": 1000
+
+            },
+            isiksizFark: {
+                "44-40-175 cm": -1000
+
+            }
+        },
+        {
             isim: "KÜP OTURMA GRUBU",
             fiyat: 30000,
             resim: [

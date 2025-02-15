@@ -57,11 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "loca7.jpeg"
             ],
             ozellikler: [
-                "Polietilen malzemeden imal edilmektedir.",
-                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
-                "60X60X60",
-                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
-                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
+                "Ürün plastik loca üst kısmı pistonlarla açılıp kapanabilir.",
+                "Minderleri ile birlikte gelir.",
+                "Işıklı olup şarjlı ve ya fişli seçenekleri mevcuttur",
+                "4 ana 12 ara renk mevcuttur.",
+                "kumandası ile istediğin hızda ve renkte kullanılabilirsiniz."
             ],
         },
         {

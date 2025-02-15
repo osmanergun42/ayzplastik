@@ -173,7 +173,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Göz alıcı ışık efektleri",
                 "Renk değiştirebilen LED ışıklar",
                 "Uzun ömürlü batarya",
-                "Kolay taşınabilir tasarım"
+                "Kolay taşınabilir tasarım",
+                "Boyutlar En x Genişlik x Yükseklik şeklinde verilmiştir"
             ],
             boyutlar: {
                 "30x30x100 cm": 0,

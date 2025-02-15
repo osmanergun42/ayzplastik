@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             isim: "FİLDİŞİ",
-            fiyat: 6500,
+            fiyat: 13000,
             resim: [
                 "fildisi1.jpeg", 
                 "fildisi2.jpeg" 
@@ -175,10 +175,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Uzun ömürlü batarya",
                 "Kolay taşınabilir tasarım"
             ],
+            boyutlar: {
+                "30x30x100 cm": 0
+                "30x30x150 cm": 2000
+                "43x30x210 cm": 4500
+            },
             sarjliFark: {
-                "10x10 cm": 1000,
-                "20x20 cm": 1500,
-                "30x30 cm": 2000
+                "30x30x100 cm": 1000,
+                "30x30x150 cm": 3000,
+                "43x30x210 cm": 6000
+            },
+            isiksizFark: {
+                "30x30x100 cm": -1000,
+                "30x30x150 cm": -1000,
+                "43x30x210 cm": -2500,
+
             }
         },
         {
@@ -311,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Dropdown menüler oluştur
         let dropdownHTML = '<div class="dropdown-container">';
-        if (urun.isim === "IŞIKLI KÜRE" || urun.isim === "PLASTİK SAKSI") {
+        if (urun.isim === "IŞIKLI KÜRE" || urun.isim === "PLASTİK SAKSI" || urun.isim === "FİLDİŞİ") {
             dropdownHTML += '<select class="urun-boyut-secimi">';
             for (const boyut in urun.boyutlar) {
                 dropdownHTML += `<option value="${boyut}">${boyut}</option>`;
@@ -325,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (urun.isim !== "KONİK PLASTİK SAKSI") {
                 dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
             }
-            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE") {
+            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || || urun.isim === "FİLDİŞİ") {
                 dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
             }
             dropdownHTML += '</select>';

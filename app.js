@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fiyat: 42000,
             resim: [
                 "yarım1.jpeg", 
-                "yarım2.jpeg", 
+                "yarım2.jpeg" 
             ],
             ozellikler: [
                 "Polietilen malzemeden imal edilmektedir.",

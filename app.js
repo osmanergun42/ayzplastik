@@ -88,6 +88,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         },
+        {
+            isim: "KOLON AYDINLATMA",
+            fiyat: 10000,
+            resim: [
+                "kolon1.png", 
+                "bkolon2.png", 
+                "kolon3.png"
+            ],
+            ozellikler: [
+                "Polietilen malzemeden imal edilmektedir.",
+                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
+                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
+                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
+            ],
+            sarjliFark: {
+                "40X40X40 cm": 1000
+
+            },
+            isiksizFark: {
+                "44-40-175 cm": -1000
+
+            }
+        },
          {
             isim: "YARIM DAİRE BAR MASASI",
             fiyat: 42000,
@@ -339,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (urun.isim !== "KONİK PLASTİK SAKSI") {
                 dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
             }
-            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || urun.isim === "FİLDİŞİ" || urun.isim === "BİSTRO MASA") {
+            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || urun.isim === "FİLDİŞİ" || urun.isim === "BİSTRO MASA" || urun.isim === "KOLON AYDINLATMA") {
                 dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
             }
             dropdownHTML += '</select>';

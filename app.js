@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             isiksizFark: {
                 "44-40-175 cm": -5000
-
             }
         },
         {

@@ -63,14 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
-            sarjliFark: {
-                "40X40X40 cm": 1000
-
-            },
-            isiksizFark: {
-                "44-40-175 cm": 0
-
-            }
         },
         {
             isim: "IŞIKLI SİLİNDİR",

@@ -319,6 +319,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
             }
             dropdownHTML += '</select>';
+        } else if (urun.isim === "KONİK PLASTİK SAKSI") {
+            dropdownHTML += '<select class="urun-tip-secimi">';
+            dropdownHTML += `<option value="fisli">Fişli</option>`;
+            dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
+            dropdownHTML += '</select>';
         }
         dropdownHTML += '</div>';
 
@@ -457,3 +462,4 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==";
     });
 });
+▋

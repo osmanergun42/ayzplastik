@@ -41,35 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "60x60 cm": -1500,
                 "80x80 cm": -750,
                 "100x100 cm": -1000
-
-            }
-        },
-        {
-            isim: "PLASTİK LOCA",
-            fiyat: 42000,
-            resim: [
-                "loca1.jpeg", 
-                "loca2.jpeg", 
-                "loca3.jpeg",
-                "loca4.jpeg",
-                "loca5.jpeg", 
-                "loca6.jpeg",
-                "loca7.jpeg"
-            ],
-            ozellikler: [
-                "Polietilen malzemeden imal edilmektedir.",
-                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
-                "60X60X60",
-                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
-                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
-            ],
-            sarjliFark: {
-                "40X40X40 cm": 1000
-
-            },
-            isiksizFark: {
-                "44-40-175 cm": 0
-
             }
         },
         {
@@ -104,52 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Polietilen malzemeden imal edilmektedir.",
                 "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
                 "60X60X60",
-                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
-                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
-            ],
-            sarjliFark: {
-                "40X40X40 cm": 1000
-
-            },
-            isiksizFark: {
-                "44-40-175 cm": -1000
-
-            }
-        },
-        {
-            isim: "DEKOR BURGU",
-            fiyat: 15000,
-            resim: [
-                "dekor1.jpg", 
-                "dekor2.jpg", 
-                "dekor3.jpg"
-            ],
-            ozellikler: [
-                "Polietilen malzemeden imal edilmektedir.",
-                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
-                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
-                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
-            ],
-            sarjliFark: {
-                "40X40X40 cm": 2000
-
-            },
-            isiksizFark: {
-                "44-40-175 cm": -2000
-
-            }
-        },
-        {
-            isim: "KOLON AYDINLATMA",
-            fiyat: 10000,
-            resim: [
-                "kolon1.png", 
-                "kolon2.png", 
-                "kolon3.png"
-            ],
-            ozellikler: [
-                "Polietilen malzemeden imal edilmektedir.",
-                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
                 "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
@@ -247,8 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Göz alıcı ışık efektleri",
                 "Renk değiştirebilen LED ışıklar",
                 "Uzun ömürlü batarya",
-                "Kolay taşınabilir tasarım",
-                "Boyutlar En x Genişlik x Yükseklik şeklinde verilmiştir"
+                "Kolay taşınabilir tasarım"
             ],
             boyutlar: {
                 "30x30x100 cm": 0,
@@ -269,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             isim: "BİSTRO MASA",
-            fiyat: 8000,
+            fiyat: 6500,
             resim: [
                 "bistro_masa1.jpeg", 
                 "bistromasa2.jpeg", 
@@ -286,11 +210,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
             ],
             sarjliFark: {
-                "60x60 cm": 1000
-            },
-            isiksizFark: {
-                "60x60 cm": -1000
-
+                "60x60 cm": 1000,
+                "70x70 cm": 1500,
+                "80x80 cm": 2000
             }
         },
         {
@@ -350,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             isim: "BAR MASASI",
-            fiyat: 67000,
+            fiyat: 7500,
             resim: [
                 "barmasasi1.jpeg", 
                 "barmasasi2.jpeg", 
@@ -358,20 +280,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 "barmasasi4.jpeg"  
             ],
             ozellikler: [
-                "Ürün karşılama ve bar masası 7 parçanın birleşimiyle birlikte oluşuyor",
-                "Işıklı ve fişli olan modelimiz",
-                "4 ana 12 ara renk mevcuttur",
-                "Kumandası ile istediğiniz hızda ve renkte kullanabilirsiniz",
-                "Ürünün maddesi polietilendir plastiktir",
-                "İç çapı 270 cm x Yükselik 120 cm x En 70 cm"
+                "Modern tasarım",
+                "Dayanıklı malzeme",
+                "Kolay taşınabilir",
+                "Şık ve fonksiyonel"
             ],
             sarjliFark: {
-                "70x70 cm": 5000
-            },
-            isiksizFark: {
-                "50X40X50 cm": -2000,
-
-
+                "70x70 cm": 1000,
+                "80x80 cm": 1500,
+                "90x90 cm": 2000
             }
         },
         {
@@ -415,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (urun.sarjliFark !== undefined) {
             dropdownHTML += '<select class="urun-tip-secimi">';
             dropdownHTML += `<option value="fisli">Fişli</option>`;
-            if (urun.isim !== "KONİK PLASTİK SAKSI" || "PLASTİK LOCA") {
+            if (urun.isim !== "KONİK PLASTİK SAKSI" && urun.isim !== "PLASTİK LOCA") {
                 dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
             }
             if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || urun.isim === "FİLDİŞİ" || urun.isim === "BİSTRO MASA" || urun.isim === "KOLON AYDINLATMA" || urun.isim === "DEKOR BURGU") {

@@ -176,8 +176,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Kolay taşınabilir tasarım"
             ],
             boyutlar: {
-                "30x30x100 cm": 0
-                "30x30x150 cm": 2000
+                "30x30x100 cm": 0,
+                "30x30x150 cm": 2000,
                 "43x30x210 cm": 4500
             },
             sarjliFark: {
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
             isiksizFark: {
                 "30x30x100 cm": -1000,
                 "30x30x150 cm": -1000,
-                "43x30x210 cm": -2500,
+                "43x30x210 cm": -2500
 
             }
         },

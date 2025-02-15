@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         },
          {
-            isim: "YARIM DAİRE BAR KOLTUĞU",
+            isim: "YARIM DAİRE BAR MASASI",
             fiyat: 42000,
             resim: [
                 "yarım1.jpeg", 
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dropdownHTML += '<select class="urun-tip-secimi">';
             dropdownHTML += `<option value="fisli">Fişli</option>`;
             dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
-            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU") || urun.isim === "YARIM DAİRE BAR KOLTUĞU" {
+            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU") || urun.isim === "YARIM DAİRE BAR MASASI") {
                 dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
             }
             dropdownHTML += '</select>';

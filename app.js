@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fiyat: 10000,
             resim: [
                 "kolon1.png", 
-                "bkolon2.png", 
+                "kolon2.png", 
                 "kolon3.png"
             ],
             ozellikler: [

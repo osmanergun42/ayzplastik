@@ -462,4 +462,3 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==";
     });
 });
-▋

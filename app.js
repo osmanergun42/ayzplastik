@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "60x60 cm": 1000,
                 "80x80 cm": 500,
                 "100x100 cm": 1000
-            }
+            },
             isiksizFark: {
                 "20x20 cm": -1000,
                 "30x30 cm": -1000,

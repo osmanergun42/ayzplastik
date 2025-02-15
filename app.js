@@ -57,9 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
             isim: "BAR KOLTUĞU",
             fiyat: 8000,
             resim: [
-                "küpoturma1.jpeg", 
-                "küpoturma2.jpeg", 
-                "küpoturma3.jpeg"     
+                "barkoltuğu1.jpeg", 
+                "barkoltuğu2.jpeg", 
+                "barkoltuğu3.jpeg",
+                "barkoltuğu4.jpeg"
             ],
             ozellikler: [
                 "Polietilen malzemeden imal edilmektedir.",

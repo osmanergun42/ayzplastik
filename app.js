@@ -89,6 +89,29 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         },
         {
+            isim: "DEKOR BURGU",
+            fiyat: 15000,
+            resim: [
+                "dekor1.jpeg", 
+                "dekor2.jpeg", 
+                "dekor3.jpeg"
+            ],
+            ozellikler: [
+                "Polietilen malzemeden imal edilmektedir.",
+                "RGB Led 12V Batarya Pil veya Adaptör ile çalışmaktadır.",
+                "Uzaktan kumanda sistemi ile ışık geçişleri, renk ayarı ve açma/kapama yapılmaktadır.",
+                "Ürünlerimiz adet fiyatı üzerinden listelenmiştir."
+            ],
+            sarjliFark: {
+                "40X40X40 cm": 2000
+
+            },
+            isiksizFark: {
+                "44-40-175 cm": -2000
+
+            }
+        },
+        {
             isim: "KOLON AYDINLATMA",
             fiyat: 10000,
             resim: [
@@ -362,7 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (urun.isim !== "KONİK PLASTİK SAKSI") {
                 dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
             }
-            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || urun.isim === "FİLDİŞİ" || urun.isim === "BİSTRO MASA" || urun.isim === "KOLON AYDINLATMA") {
+            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || urun.isim === "FİLDİŞİ" || urun.isim === "BİSTRO MASA" || urun.isim === "KOLON AYDINLATMA" || urun.isim === "DEKOR BURGU") {
                 dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
             }
             dropdownHTML += '</select>';

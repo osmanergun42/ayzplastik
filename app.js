@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             isim: "IŞIKLI SİLİNDİR",
-            fiyat: 3000,
+            fiyat: 9000,
             resim: [
                 "silindir1.jpeg", 
                 "silindir2.jpeg" 
@@ -267,19 +267,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Boyutlar En x Genişlik x Yükseklik şeklinde verilmiştir"
             ],
             boyutlar: {
-                "30x30x100 cm": 0,
-                "30x30x150 cm": 2000,
-                "43x30x210 cm": 4500
+            
+                "43x30x210 cm": 0
             },
             sarjliFark: {
                 "30x30x100 cm": 1000,
                 "30x30x150 cm": 3000,
-                "43x30x210 cm": 6000
+                "43x30x210 cm": 2000
             },
             isiksizFark: {
                 "30x30x100 cm": -1000,
                 "30x30x150 cm": -1000,
-                "43x30x210 cm": -2500
+                "43x30x210 cm": -3000
 
             }
         },
@@ -394,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         {
             isim: "ŞEZLONG",
-            fiyat: 4500,
+            fiyat: 8000,
             resim: [
                 "şezlong1.jpeg",
                 "şezlong2.jpeg",

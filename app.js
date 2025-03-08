@@ -529,32 +529,35 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Modal açma ve kapatma işlevleri
-    window.openModal = function(productName) {
-        const modal = document.getElementById("myModal");
-        const featuresList = document.getElementById("product-features");
-        featuresList.innerHTML = ""; // Listeyi temizle
+window.openModal = function(productName) {
+    const modal = document.getElementById("myModal");
+    const featuresList = document.getElementById("product-features");
+    featuresList.innerHTML = ""; // Listeyi temizle
 
-        // Ürün özelliklerini ekle
-        const urun = urunler.find(item => item.isim === productName);
-        urun.ozellikler.forEach(feature => {
-            const li = document.createElement("li");
-            li.textContent = feature;
-            featuresList.appendChild(li);
-        });
+    // Ürün özelliklerini ekle
+    const urun = urunler.find(item => item.isim === productName);
+    urun.ozellikler.forEach(feature => {
+        const li = document.createElement("li");
+        li.textContent = feature;
+        featuresList.appendChild(li);
+    });
 
-        modal.style.display = "block";
-    };
+    modal.style.display = "block";
+};
 
-    window.closeModal = function() {
-        document.getElementById("myModal").style.display = "none";
-    };
+// Modal kapatma işlevi
+window.closeModal = function() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+};
 
-    window.onclick = function(event) {
-        const modal = document.getElementById("myModal");
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    };
+// Boşluğa tıklanırsa modalı kapatma işlevi
+window.onclick = function(event) {
+    const modal = document.getElementById("myModal");
+    if (event.target === modal) {
+        closeModal();
+    }
+};
 
     // Filtreleme sistemi
     document.getElementById('filter-input').addEventListener('input', function(event) {

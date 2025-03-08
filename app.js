@@ -413,6 +413,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const urunlerContainer = document.getElementById("urunler");
+    const sidebarNav = document.getElementById("sidebar-nav");
 
     urunler.forEach(urun => {
         const urunDiv = document.createElement("div");
@@ -421,7 +422,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Dropdown menüler oluştur
         let dropdownHTML = '<div class="dropdown-container">';
-        if (urun.isim === "IŞIKLI KÜRE" || urun.isim === "PLASTİK SAKSI" || urun.isim === "FİLDİŞİ") {
+        if (urun.isim === "IŞIKLI KÜRE" || urun.isim === "PLASTİK SAKSI") {
             dropdownHTML += '<select class="urun-boyut-secimi">';
             for (const boyut in urun.boyutlar) {
                 dropdownHTML += `<option value="${boyut}">${boyut}</option>`;
@@ -432,17 +433,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (urun.sarjliFark !== undefined) {
             dropdownHTML += '<select class="urun-tip-secimi">';
             dropdownHTML += `<option value="fisli">Fişli</option>`;
-            if (urun.isim !== "KONİK PLASTİK SAKSI" || urun.isim !== "PLASTİK LOCA") {
-                dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
-            }
-            if (urun.isim === "MANTAR ABAJUR" || urun.isim === "KÜP OTURMA GRUBU" || urun.isim === "PAPATYA OTURMA GRUBU" || urun.isim === "BAR KOLTUĞU" || urun.isim === "YARIM DAİRE BAR MASASI" || urun.isim === "KONİK PLASTİK SAKSI" || urun.isim === "IŞIKLI KÜRE" || urun.isim === "FİLDİŞİ" || urun.isim === "BİSTRO MASA" || urun.isim === "KOLON AYDINLATMA" || urun.isim === "DEKOR BURGU" || urun.isim === "KARŞILAMA MASASI") {
-                dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
-            }
-            dropdownHTML += '</select>';
-        } else if (urun.isim === "KONİK PLASTİK SAKSI") {
-            dropdownHTML += '<select class="urun-tip-secimi">';
-            dropdownHTML += `<option value="fisli">Fişli</option>`;
-            dropdownHTML += `<option value="isiksiz">Işıksız</option>`;
+            dropdownHTML += `<option value="sarjli">Şarjlı</option>`;
             dropdownHTML += '</select>';
         }
         dropdownHTML += '</div>';
@@ -479,6 +470,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         urunlerContainer.appendChild(urunDiv);
 
+        // Sidebar için ürün isimleri ekleme
+        const sidebarItem = document.createElement("a");
+        sidebarItem.href = `#${urun.isim.toLowerCase().replace(/\s+/g, '_')}`;
+        sidebarItem.textContent = urun.isim;
+        sidebarItem.classList.add("sidebar-item");
+        sidebarNav.appendChild(sidebarItem);
+
         // Fiyatı güncelleme işlevi
         const boyutSecimi = urunDiv.querySelector('.urun-boyut-secimi');
         const tipSecimi = urunDiv.querySelector('.urun-tip-secimi');
@@ -509,16 +507,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const secilenTip = tipSecimi.value;
                 if (secilenTip === "sarjli") {
                     yeniFiyat += urun.sarjliFark[secilenBoyut];
-                } else if (secilenTip === "isiksiz" && urun.isiksizFark) {
-                    yeniFiyat += urun.isiksizFark[secilenBoyut];
                 }
             }
         } else if (tipSecimi) {
             const secilenTip = tipSecimi.value;
             if (secilenTip === "sarjli") {
                 yeniFiyat += urun.sarjliFark[Object.keys(urun.sarjliFark)[0]];
-            } else if (secilenTip === "isiksiz" && urun.isiksizFark) {
-                yeniFiyat += urun.isiksizFark[Object.keys(urun.isiksizFark)[0]];
             }
         }
         
@@ -574,11 +568,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 urun.style.display = 'none';
             }
         });
-    });
 
-    // Instagram yönlendirmesi
-    document.querySelector('.instagram-link').addEventListener('click', function(event) {
-        event.preventDefault();
-        window.location.href = "https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==";
+        // Sidebar filtreleme
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        sidebarItems.forEach(item => {
+            const itemName = item.textContent.toLowerCase();
+            if (itemName.includes(filterText)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
     });
 });

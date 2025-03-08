@@ -13,16 +13,20 @@
             <img src="ayzlogo.jpeg" alt="AyzPlastik Logo" id="logo">
         </div>
         <h1>AyzPlastik Ürün Kataloğu</h1>
-    </header>
 
-    <!-- Filtreleme Sistemi -->
-    <div class="filter-container">
-        <input type="text" id="filter-input" placeholder="Ürün ismi ile filtrele...">
-    </div>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="filter-container">
+                <input type="text" id="filter-input" placeholder="Ürün ismi ile filtrele...">
+            </div>
+            <nav id="sidebar-nav">
+                <!-- Ürün isimleri burada JavaScript ile yüklenecek -->
+            </nav>
+        </aside>
+    </header>
 
     <!-- İletişim Bilgileri -->
     <div class="contact-info">
-        <p><strong>İletişim Bilgileri:</strong></p>
         <div class="contact-details">
             <!-- Instagram Logo ve Link -->
             <a href="https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==" class="instagram-link">
@@ -30,7 +34,7 @@
                 <span class="instagram-text">AYZPLASTIK</span>
             </a>
             <!-- WhatsApp Logo ve Link -->
-            <a href="https://wa.me/+905542345454" class="whatsapp-link">
+            <a href="https://wa.me/05542345454" class="whatsapp-link">
                 <img src="wplogo.png" alt="WhatsApp Logo" id="whatsapp-logo">
                 <span class="whatsapp-number">05542345454</span>
             </a>
@@ -56,55 +60,5 @@
     </div>
 
     <script src="app.js"></script>
-    <script>
-        // Modal açma fonksiyonu
-        window.openModal = function(productName) {
-            document.getElementById('myModal').style.display = "flex";
-
-            // Ürün Özellikleri
-            const featuresList = document.getElementById('product-features');
-            featuresList.innerHTML = ""; // Listeyi temizle
-
-            // Ürün özelliklerini ekle
-            const urun = window.tumUrunler.find(item => item.isim === productName);
-            urun.ozellikler.forEach(feature => {
-                const li = document.createElement("li");
-                li.textContent = feature;
-                featuresList.appendChild(li);
-            });
-        };
-
-        // Modal kapama fonksiyonu
-        function closeModal() {
-            document.getElementById('myModal').style.display = "none";
-        }
-
-        // Modal dışında bir yere tıklanırsa da kapanmasını sağla
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('myModal') || event.target == document.querySelector('.close')) {
-                closeModal();
-            }
-        }
-
-        // Filtreleme sistemi
-        document.getElementById('filter-input').addEventListener('input', function(event) {
-            const filterText = event.target.value.toLowerCase();
-            const urunler = document.querySelectorAll('.urun');
-            urunler.forEach(urun => {
-                const urunIsim = urun.querySelector('h2').textContent.toLowerCase();
-                if (urunIsim.includes(filterText)) {
-                    urun.style.display = 'block';
-                } else {
-                    urun.style.display = 'none';
-                }
-            });
-        });
-
-        // Instagram yönlendirmesi
-        document.querySelector('.instagram-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            window.location.href = "https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==";
-        });
-    </script>
 </body>
 </html>

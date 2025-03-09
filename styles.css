@@ -141,7 +141,7 @@ header h1 {
     justify-content: space-between; /* Ürünler arasındaki boşlukları eşitler */
     padding: 20px;
     margin: 0 auto; /* Ortalamak için */
-    max-width: 1200px; /* Üç ürünün yan yana sığacağı genişlik */
+    max-width: 1100px; /* Üç ürünün yan yana sığacağı genişlik */
 }
 
 /* Ürün kartları */
@@ -149,22 +149,22 @@ header h1 {
     background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
-    width: calc(33.333% - 40px); /* Üç ürün yan yana sığacak şekilde ayarlandı */
+    width: calc(33.333% - 20px); /* Üç ürün yan yana sığacak şekilde ayarlandı */
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
 @media (max-width: 768px) {
     .urun {
-        width: calc(50% - 40px); /* Daha küçük ekranlarda iki ürün yan yana */
+        width: calc(50% - 20px); /* Daha küçük ekranlarda iki ürün yan yana */
     }
 }
 
 @media (max-width: 480px) {
     .urun {
-        width: calc(100% - 40px); /* En küçük ekranlarda bir ürün */
+        width: calc(100% - 20px); /* En küçük ekranlarda bir ürün */
     }
 }
 
@@ -174,7 +174,7 @@ header h1 {
 }
 
 .urun img {
-    width: 100%;
+    width: 50%; /* Resim genişliğini yarıya düşürme */
     height: auto;
     border-radius: 15px;
 }

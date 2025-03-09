@@ -137,10 +137,11 @@ header h1 {
 /* Ürün listesi */
 #urunler {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ürünler arasındaki boşlukları eşitler */
     padding: 20px;
+    margin: 0 auto; /* Ortalamak için */
+    max-width: 1200px; /* Üç ürünün yan yana sığacağı genişlik */
 }
 
 /* Ürün kartları */
@@ -150,9 +151,21 @@ header h1 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin: 20px;
     padding: 20px;
-    width: 260px;
+    width: calc(33.333% - 40px); /* Üç ürün yan yana sığacak şekilde ayarlandı */
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .urun {
+        width: calc(50% - 40px); /* Daha küçük ekranlarda iki ürün yan yana */
+    }
+}
+
+@media (max-width: 480px) {
+    .urun {
+        width: calc(100% - 40px); /* En küçük ekranlarda bir ürün */
+    }
 }
 
 .urun:hover {

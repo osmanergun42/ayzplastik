@@ -189,7 +189,7 @@ header h1 {
 }
 
 .urun img {
-    width: 50%; /* Resim genişliğini yarıya düşürme */
+    width: 78.125%; /* Resim genişliğini %25 daha artırma */
     height: auto;
     border-radius: 15px;
 }

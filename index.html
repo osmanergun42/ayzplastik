@@ -3,136 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Paneli</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="admin.css">
-
-    <!-- JQuery ve Select2 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-    <!-- Firebase -->
-    <script type="module" src="./firebase-config.js"></script>
-    <script type="module" src="./admin.js"></script>
-
+    <title>AyzPlastik | Kalitenin Adı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f7f7f7;
-        }
-        .container {
-            max-width: 700px;
-            margin: auto;
-            padding: 20px;
-        }
-        h1 { text-align: center; color: #333; }
-        .form-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        .form-card input, .form-card textarea, .form-card button {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-        .form-card button {
-            background: #3498db;
-            color: #fff;
+        body { background-color: #f7f7f7; margin: 0; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+        .login-btn, .admin-btn {
+            padding: 8px 15px;
+            margin-left: 10px;
             border: none;
-            transition: 0.3s;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
         }
-        .form-card button:hover {
-            background: #2980b9;
-        }
-        .filter-container {
-            margin-bottom: 20px;
-        }
-        .urun-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .urun-card img {
-            width: 100%;
-            border-radius: 8px;
-            margin: 10px 0;
-        }
-        .urun-buttons button {
-            width: 48%;
-            margin: 5px 1%;
-            padding: 10px;
-            border-radius: 8px;
+        .login-btn:hover, .admin-btn:hover { background-color: #0056b3; }
+        .filters button {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: #e74c3c;
+            color: white;
             font-weight: bold;
             cursor: pointer;
-            border: none;
         }
-        .urun-buttons button:first-child { background: #e74c3c; color: #fff; }
-        .urun-buttons button:last-child { background: #2ecc71; color: #fff; }
-
-        .modal {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 999;
-        }
-        .modal-content {
-            background: #fff; padding: 20px; border-radius: 10px;
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 90%; max-width: 400px;
-        }
-        @media (max-width: 600px) {
-            .form-card input, .form-card textarea, .form-card button {
-                font-size: 14px;
-            }
-            .urun-buttons button {
-                font-size: 14px;
-                padding: 8px;
-            }
-        }
+        section { margin-top: 40px; }
+        section h2 { margin-left: 20px; color: #333; }
     </style>
+    <script type="module" src="firebase-config.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Admin Paneli</h1>
 
-        <div class="form-card">
-            <h2>Ürün Ekle / Düzenle</h2>
-            <input type="hidden" id="urunId">
-            <input type="text" id="isim" placeholder="Ürün İsmi">
-            <input type="number" id="fiyat" placeholder="Fiyat (TL)">
-            <textarea id="ozellikler" placeholder="Özellikler (virgülle ayır)"></textarea>
-
-            <!-- Mobil uyumlu resim seçici -->
-            <input type="file" id="resimDosya" accept="image/*" capture="environment" multiple>
-
-            <button id="ekleBtn">Ekle</button>
-            <button id="kaydetBtn" style="display:none;">Kaydet</button>
-        </div>
-
-        <div class="filter-container">
-            <label>Ürün Ara / Filtrele:</label>
-            <select id="urunFilter" style="width: 100%;"></select>
-        </div>
-
-        <h3>Mevcut Ürünler</h3>
-        <div id="urunListesi"></div>
+<header>
+    <div class="logo-container">
+        <img src="ayzlogo.jpeg" alt="AyzPlastik Logo" class="logo">
+        <h1>AyzPlastik</h1>
     </div>
+    <h2>KALİTENİN ADI</h2>
+    <div class="contact-info">
+       <a href="https://www.instagram.com/ayzplastik" target="_blank">
+          <img src="inslogo.png" alt="Instagram"> @ayzplastik
+       </a>
+       <a href="https://wa.me/905542345454" target="_blank">
+          <img src="wplogo.png" alt="WhatsApp"> 0554 234 54 54
+       </a>
+      <button id="loginBtn" class="login-btn">Giriş Yap</button>
+      <button id="adminPanelBtn" class="admin-btn" style="display:none;" onclick="window.location.href='admin.html'">Admin Paneli</button>
+</div>
 
-    <!-- Modal -->
-    <div id="confirmModal" class="modal">
-        <div class="modal-content">
-            <p id="confirmText"></p>
-            <button id="confirmYes">Evet</button>
-            <button id="confirmNo">Hayır</button>
-        </div>
-    </div>
+</header>
+
+<nav id="filters" class="filters">
+    <!-- Butonlar dinamik oluşacak -->
+</nav>
+
+<div id="urunler">
+    <!-- Ürün kategorileri dinamik oluşacak -->
+</div>
+
+<div id="modal" class="modal"></div>
+
+<footer>
+    <p>&copy; 2025 AyzPlastik. Tüm hakları saklıdır.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,148 @@
+/* Genel Stil */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f7fa;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Form Kart */
+.form-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+input, textarea, select, button {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+button {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0056b3, #003f7f);
+}
+
+/* Ürün Kartları */
+.urun-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.urun-info {
+    flex: 1;
+}
+
+.urun-info img {
+    width: 120px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.urun-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.urun-buttons button {
+    width: 100px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content button {
+    margin: 10px 5px 0 5px;
+    width: 100px;
+}
+
+/* Filtre */
+.filter-container {
+    margin-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .urun-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .urun-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+/* Select2 Kutusuna genişlik verelim */
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-selection--single {
+    height: 45px !important;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+.filter-container {
+    margin-bottom: 25px;
+    margin-top: 20px;
+}

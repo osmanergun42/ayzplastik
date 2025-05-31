@@ -3,63 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AyzPlastik </title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>AyzPlastik | Kalitenin Adı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: #f7f7f7; margin: 0; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+        .login-btn, .admin-btn {
+            padding: 8px 15px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .login-btn:hover, .admin-btn:hover { background-color: #0056b3; }
+        .filters button {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: #e74c3c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        section { margin-top: 40px; }
+        section h2 { margin-left: 20px; color: #333; }
+    </style>
+    <script type="module" src="firebase-config.js"></script>
 </head>
+
 <body>
-    <header>
-        <div id="logo-container">
-            <img src="ayzlogo.jpeg" alt="AyzPlastik Logo" id="logo">
-        </div>
+
+<header>
+    <div class="logo-container">
+        <img src="ayzlogo.jpeg" alt="AyzPlastik Logo" class="logo">
         <h1>AyzPlastik</h1>
-        <h2 class="rgb-header">KALİTENİN ADI</h2>
-
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="filter-container">
-                <input type="text" id="filter-input" placeholder="Ürün ismi ile filtrele...">
-            </div>
-            <nav id="sidebar-nav">
-                <!-- Ürün isimleri burada JavaScript ile yüklenecek -->
-            </nav>
-        </aside>
-    </header>
-
-    <!-- İletişim Bilgileri -->
+    </div>
+    <h2>KALİTENİN ADI</h2>
     <div class="contact-info">
-        <div class="contact-details">
-            <!-- Instagram Logo ve Link -->
-            <a href="https://www.instagram.com/ayzplastik?igsh=MWJ6c2djYTdoeTVhag==" class="instagram-link">
-                <img src="inslogo.png" alt="Instagram Logo" id="instagram-logo">
-                <span class="instagram-text">AYZPLASTIK</span>
-            </a>
-            <!-- WhatsApp Logo ve Link -->
-            <a href="https://wa.me/05542345454" class="whatsapp-link">
-                <img src="wplogo.png" alt="WhatsApp Logo" id="whatsapp-logo">
-                <span class="whatsapp-number">05542345454</span>
-            </a>
-        </div>
-    </div>
+       <a href="https://www.instagram.com/ayzplastik" target="_blank">
+          <img src="inslogo.png" alt="Instagram"> @ayzplastik
+       </a>
+       <a href="https://wa.me/905542345454" target="_blank">
+          <img src="wplogo.png" alt="WhatsApp"> 0554 234 54 54
+       </a>
+      <button id="loginBtn" class="login-btn">Giriş Yap</button>
+      <button id="adminPanelBtn" class="admin-btn" style="display:none;" onclick="window.location.href='admin.html'">Admin Paneli</button>
+</div>
 
-    <!-- Ürün Listesi -->
-    <main>
-        <section id="urunler">
-            <!-- Ürünler burada JavaScript ile yüklenecek -->
-        </section>
-    </main>
+</header>
 
-    <!-- Modal Özellikler -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Ürün Özellikleri</h2>
-            <ul id="product-features">
-                <!-- Özellikler buraya ekleniyor -->
-            </ul>
-        </div>
-    </div>
+<nav id="filters" class="filters">
+    <!-- Butonlar dinamik oluşacak -->
+</nav>
 
-    <script src="app.js"></script>
+<div id="urunler">
+    <!-- Ürün kategorileri dinamik oluşacak -->
+</div>
+
+<div id="modal" class="modal"></div>
+
+<footer>
+    <p>&copy; 2025 AyzPlastik. Tüm hakları saklıdır.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+
 </body>
 </html>

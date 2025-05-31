@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Paneli</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- JQuery ve Select2 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script type="module" src="./firebase-config.js"></script>
+    <script type="module" src="./admin.js"></script>
+ 
+</head>
+
+<body>
+    <div class="container">
+        <h1>Admin Paneli</h1>
+
+        <div class="form-card">
+            <h2>Ürün Ekle / Düzenle</h2>
+            <input type="hidden" id="urunId">
+            <input type="text" id="isim" placeholder="Ürün İsmi">
+            <input type="number" id="fiyat" placeholder="Fiyat (TL)">
+            <textarea id="ozellikler" placeholder="Özellikler (virgülle ayır)"></textarea>
+            <input type="file" id="resimDosya" multiple>
+            <button id="ekleBtn">Ekle</button>
+            <button id="kaydetBtn" style="display:none;">Kaydet</button>
+        </div>
+
+        <div class="filter-container">
+            <label>Ürün Ara / Filtrele:</label>
+            <select id="urunFilter" style="width: 100%;"></select>
+        </div>
+
+        <h3>Mevcut Ürünler</h3>
+        <div id="urunListesi"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p id="confirmText"></p>
+            <button id="confirmYes">Evet</button>
+            <button id="confirmNo">Hayır</button>
+        </div>
+    </div>
+</body>
+</html>

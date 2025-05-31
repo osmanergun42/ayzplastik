@@ -2,22 +2,44 @@ import { db, storage } from "./firebase-config.js";
 import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
 
-// Modal fonksiyonu
+// ✅ Resim sıkıştırma fonksiyonu (mobil uyum için)
+async function resizeImage(file, maxWidth = 1024, maxHeight = 1024) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        const reader = new FileReader();
+
+        reader.onload = e => img.src = e.target.result;
+        img.onload = () => {
+            const canvas = document.createElement("canvas");
+            let width = img.width, height = img.height;
+            if (width > height && width > maxWidth) {
+                height *= maxWidth / width;
+                width = maxWidth;
+            } else if (height > maxHeight) {
+                width *= maxHeight / height;
+                height = maxHeight;
+            }
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, width, height);
+            canvas.toBlob(blob => resolve(blob), 'image/jpeg', 0.8);
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+// ✅ Modal fonksiyonu
 function showConfirmModal(message, onConfirm) {
     const modal = document.getElementById("confirmModal");
     document.getElementById("confirmText").innerText = message;
     modal.style.display = "block";
 
-    document.getElementById("confirmYes").onclick = () => {
-        modal.style.display = "none";
-        onConfirm();
-    };
-    document.getElementById("confirmNo").onclick = () => {
-        modal.style.display = "none";
-    };
+    document.getElementById("confirmYes").onclick = () => { modal.style.display = "none"; onConfirm(); };
+    document.getElementById("confirmNo").onclick = () => { modal.style.display = "none"; };
 }
 
-// ÜRÜN EKLEME
+// ✅ ÜRÜN EKLEME
 async function urunEkle() {
     const isim = document.getElementById("isim").value.trim();
     const fiyat = parseFloat(document.getElementById("fiyat").value);
@@ -34,17 +56,15 @@ async function urunEkle() {
             let urlList = [];
 
             for (let dosya of dosyalar) {
+                const compressed = await resizeImage(dosya);
                 const storageRef = ref(storage, `urunler/${Date.now()}-${dosya.name}`);
-                const snapshot = await uploadBytes(storageRef, dosya);
+                const snapshot = await uploadBytes(storageRef, compressed);
                 const downloadURL = await getDownloadURL(snapshot.ref);
                 urlList.push(downloadURL);
             }
 
             await addDoc(collection(db, "urunler"), {
-                isim,
-                fiyat,
-                ozellikler,
-                resim: urlList
+                isim, fiyat, ozellikler, resim: urlList
             });
 
             alert("Ürün başarıyla eklendi.");
@@ -59,7 +79,7 @@ async function urunEkle() {
     });
 }
 
-// ÜRÜN GÜNCELLEME
+// ✅ ÜRÜN GÜNCELLEME
 async function urunGuncelle() {
     const urunId = document.getElementById("urunId").value;
     const isim = document.getElementById("isim").value.trim();
@@ -79,31 +99,29 @@ async function urunGuncelle() {
             let urlList = [];
 
             if (dosyalar.length > 0) {
-                // Eski görselleri sil
                 for (let eskiUrl of eskiVeri.resim) {
                     const eskiRef = ref(storage, decodeURIComponent(new URL(eskiUrl).pathname.split("/o/")[1].split("?")[0]));
                     await deleteObject(eskiRef).catch(err => console.warn("Eski görsel silinemedi: ", err));
                 }
-                // Yeni görselleri yükle
+
                 for (let dosya of dosyalar) {
+                    const compressed = await resizeImage(dosya);
                     const storageRef = ref(storage, `urunler/${Date.now()}-${dosya.name}`);
-                    const snapshot = await uploadBytes(storageRef, dosya);
+                    const snapshot = await uploadBytes(storageRef, compressed);
                     const downloadURL = await getDownloadURL(snapshot.ref);
                     urlList.push(downloadURL);
                 }
             }
 
             await updateDoc(urunRef, {
-                isim,
-                fiyat,
-                ozellikler,
-                resim: urlList.length > 0 ? urlList : eskiVeri.resim
+                isim, fiyat, ozellikler, resim: urlList.length > 0 ? urlList : eskiVeri.resim
             });
 
             alert("Ürün güncellendi.");
             temizleForm();
             urunleriListele();
             urunFiltreOlustur();
+
         } catch (err) {
             console.error("Güncelleme Hatası:", err);
             alert("Bir hata oluştu.");
@@ -111,7 +129,7 @@ async function urunGuncelle() {
     });
 }
 
-// Ürünleri listele
+// ✅ ÜRÜNLERİ LİSTELE
 async function urunleriListele() {
     const urunListesi = document.getElementById("urunListesi");
     urunListesi.innerHTML = "";
@@ -119,7 +137,6 @@ async function urunleriListele() {
     const snapshot = await getDocs(collection(db, "urunler"));
     snapshot.forEach(docSnap => {
         const data = docSnap.data();
-
         const urunDiv = document.createElement("div");
         urunDiv.className = "urun-card";
         urunDiv.innerHTML = `
@@ -138,8 +155,8 @@ async function urunleriListele() {
     });
 }
 
-// Ürün silme
-window.silUrun = function(id) {
+// ✅ ÜRÜN SİLME
+window.silUrun = function (id) {
     showConfirmModal("Bu ürünü silmek istediğinize emin misiniz?", async () => {
         const urunRef = doc(db, "urunler", id);
         const docSnap = await getDoc(urunRef);
@@ -157,8 +174,8 @@ window.silUrun = function(id) {
     });
 }
 
-// Ürün düzenleme
-window.duzenleUrun = async function(id) {
+// ✅ ÜRÜN DÜZENLEME
+window.duzenleUrun = async function (id) {
     const urunRef = doc(db, "urunler", id);
     const docSnap = await getDoc(urunRef);
     const data = docSnap.data();
@@ -169,7 +186,7 @@ window.duzenleUrun = async function(id) {
     document.getElementById("ozellikler").value = data.ozellikler.join(", ");
 }
 
-// Formu temizle
+// ✅ FORM TEMİZLEME
 function temizleForm() {
     document.getElementById("urunId").value = "";
     document.getElementById("isim").value = "";
@@ -178,7 +195,7 @@ function temizleForm() {
     document.getElementById("resimDosya").value = "";
 }
 
-// Filtreleme
+// ✅ SELECT2 FİLTRELEME
 async function urunFiltreOlustur() {
     const selectFilter = $('#urunFilter');
     selectFilter.empty();
@@ -226,7 +243,7 @@ async function urunFiltreOlustur() {
     });
 }
 
-// DOM yüklenince
+// ✅ SAYFA YÜKLENİNCE ÇALIŞTIR
 window.addEventListener("DOMContentLoaded", () => {
     urunleriListele();
     urunFiltreOlustur();
